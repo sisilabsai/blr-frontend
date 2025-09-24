@@ -19,85 +19,84 @@ interface Highlight {
 }
 
 const highlightDetails: { [key: string]: Highlight } = {
-  'speed-boats': {
-    title: 'Speed Boats',
-    description: 'Feel the wind in your hair as you glide across the pristine waters of Lake Bunyonyi. Our state-of-the-art speed boats offer an exhilarating experience, allowing you to explore the hidden gems of the lake in style and comfort.',
+  '29-mystical-islands': {
+    title: '29 Mystical Islands',
+    description: 'Embark on a journey through Lake Bunyonyi\'s legendary 29 islands, each with its own unique story and character. From the historic Bwama Island (Njuyeera), once home to a Scottish missionary leprosy treatment center, to the mysterious Punishment Island (Akampene) where traditional justice unfolded, discover the rich tapestry of culture, history, and natural beauty that makes each island a treasure waiting to be explored.',
     media: [
       { type: 'image', src: '/images/highlights/sb-1.jpg' },
-      { type: 'video', src: '/videos/speed-boat-tour.mp4' },
-      { type: 'image', src: '/images/highlights/sb-2.jpg' },
-    ],
-  },
-  'swimming-pool': {
-    title: 'Swimming Pool',
-    description: 'Immerse yourself in pure bliss at our infinity pool, where the water meets the sky. Surrounded by lush greenery and offering panoramic views of the lake, it\'s the perfect spot to unwind, soak up the sun, and let your worries drift away.',
-    media: [
-      { type: 'image', src: '/images/highlights/sp-1.jpg' },
-      { type: 'image', src: '/images/highlights/sp-2.jpg' },
-    ],
-  },
-  zipline: {
-    title: 'Zipline',
-    description: 'Embark on an adventure of a lifetime with our thrilling zipline experience. Soar through the air and witness the breathtaking beauty of the resort and its surroundings from a bird\'s-eye view. It\'s an adrenaline rush you won\'t forget!',
-    media: [
-      { type: 'video', src: '/images/zipline-tour.mp4' },
-      { type: 'image', src: '/images/highlights/zl-3.jpg' },
-      { type: 'image', src: '/images/highlights/zl-4.jpg' },
-    ],
-  },
-  'premium-rooms': {
-    title: 'Premium Rooms',
-    description: 'Indulge in the ultimate luxury in our premium rooms. Each room is meticulously designed to provide you with a serene and comfortable retreat, complete with modern amenities and a private balcony offering stunning views of the lake.',
-    media: [
-      { type: 'image', src: '/images/highlights/rm-1.jpg' },
-      { type: 'image', src: '/images/highlights/rm-2.jpg' },
-      { type: 'image', src: '/images/highlights/rm-3.jpg' },
-      { type: 'image', src: '/images/highlights/rm-4.jpg' },
-      { type: 'image', src: '/images/highlights/rm-5.jpg' },
-      { type: 'image', src: '/images/highlights/rm-6.jpg' },
-      { type: 'image', src: '/images/highlights/rm-7.jpg' },
-      { type: 'image', src: '/images/highlights/rm-8.jpg' },
-    ],
-  },
-  'water-bicycle': {
-    title: 'Water Bicycle',
-    description: 'Experience the unique thrill of riding a bicycle on water. Our water bicycles are a fun and eco-friendly way to explore the serene beauty of Lake Bunyonyi. Perfect for all ages, this activity offers a memorable adventure on the water.',
-    media: [
-      { type: 'image', src: '/images/activities/wb-2-2.png' },
-      {type: 'image', src: '/images/activities/wb-2.png' },
-      {type: 'image', src: '/images/activities/wb-3.png' },
-      { type: 'image', src: '/images/activities/wb-4.png' },
-      { type: 'image', src: '/images/activities/wb-5.png' },
-      {type: 'image', src: '/images/activities/wb-6.png' },
+      { type: 'image', src: '/images/activities/wb-2.png' },
+      { type: 'image', src: '/images/highlights/lunch.png' },
       { type: 'video', src: '/videos/hero-video.mp4' },
     ],
   },
-  breakfast: {
-    title: 'Breakfast',
-    description: 'Start your day with a delightful breakfast experience. Enjoy a wide selection of fresh, locally sourced ingredients, from tropical fruits to freshly baked pastries, all while taking in the stunning morning views of the lake.',
+  'africa\'s-2nd-deepest-lake': {
+    title: 'Africa\'s 2nd Deepest Lake',
+    description: 'Dive into the extraordinary depths of Lake Bunyonyi, Africa\'s second deepest lake with depths ranging from 44 to an astounding 900 meters. Formed by ancient Virunga volcanic activity, these crystal-clear waters offer safe swimming experiences in designated areas. Feel the unique sensation of floating above geological wonders while surrounded by the pristine mountain landscape of southwestern Uganda.',
+    media: [
+      { type: 'image', src: '/images/highlights/sp-1.jpg' },
+      { type: 'image', src: '/images/activities/wb-4.png' },
+      { type: 'image', src: '/images/highlights/sb-1.jpg' },
+      { type: 'video', src: '/videos/hero-video.mp4' },
+    ],
+  },
+  'virunga-mountain-views': {
+    title: 'Virunga Mountain Views',
+    description: 'Wake up to breathtaking panoramic views of the legendary Virunga Mountains, the volcanic range that gave birth to Lake Bunyonyi and home to the endangered mountain gorillas. These ancient peaks tell the story of geological forces that shaped this landscape millions of years ago, creating the dramatic backdrop that makes every sunrise and sunset an unforgettable spectacle of natural artistry.',
+    media: [
+      { type: 'image', src: '/images/highlights/zl-2.jpg' },
+      { type: 'image', src: '/images/highlights/rm-1.jpg' },
+      { type: 'image', src: '/images/highlights/dinner-4.png' },
+      { type: 'video', src: '/videos/hero-video.mp4' },
+    ],
+  },
+  'luxury-lakefront-suites': {
+    title: 'Luxury Lakefront Suites',
+    description: 'Experience unparalleled luxury in our thoughtfully designed lakefront suites, where every window frames a masterpiece of Lake Bunyonyi\'s pristine waters and rolling hills. Each suite features premium amenities, private balconies, and panoramic views that connect you intimately with the natural splendor of Africa\'s Switzerland, creating a serene sanctuary for your ultimate getaway.',
+    media: [
+      { type: 'image', src: '/images/highlights/rm-1.jpg' },
+      { type: 'image', src: '/images/highlights/sp-1.jpg' },
+      { type: 'image', src: '/images/highlights/dinner-4.png' },
+      { type: 'image', src: '/images/activities/breakfast.png' },
+    ],
+  },
+  'traditional-canoeing': {
+    title: 'Traditional Canoeing',
+    description: 'Navigate the sacred waters of Lake Bunyonyi in authentic dugout canoes, just as local fishermen have done for generations. Learn ancient techniques passed down through centuries while paddling through crystal-clear waters that reflect the surrounding mountains. This cultural immersion connects you with the timeless traditions of the Bakiga people and their deep relationship with these legendary waters.',
+    media: [
+      { type: 'image', src: '/images/highlights/wb-4.png' },
+      { type: 'image', src: '/images/activities/wb-2.png' },
+      { type: 'image', src: '/images/highlights/sb-1.jpg' },
+      { type: 'video', src: '/videos/hero-video.mp4' },
+    ],
+  },
+  'birdwatcher\'s-paradise': {
+    title: 'Birdwatcher\'s Paradise',
+    description: 'Discover why Lake Bunyonyi is renowned as a birdwatcher\'s paradise, home to the magnificent Grey Crowned Crane (Uganda\'s national bird), the vibrant Pied Kingfisher, the elusive Malachite Kingfisher, the rare Papyrus Gonolek, and the majestic Great Cormorant. Visit the legendary "conference tree" on Punishment Island where all bird species gather in natural harmony, creating a spectacular avian symphony.',
     media: [
       { type: 'image', src: '/images/activities/breakfast.png' },
-      { type: 'image', src: '/images/highlights/breakfast-2.png' },
-      
-    ],
-  },
-  lunch: {
-    title: 'Lunch',
-    description: 'Savor a delicious lunch prepared by our expert chefs. Our menu features a fusion of local and international cuisine, crafted to perfection. Enjoy your meal in a relaxed and scenic setting, with the gentle lake breeze as your companion.',
-    media: [
+      { type: 'image', src: '/images/highlights/zl-2.jpg' },
       { type: 'image', src: '/images/highlights/lunch.png' },
-      { type: 'image', src: '/images/highlights/lunch-2.png' },
+      { type: 'image', src: '/images/activities/wb-2.png' },
     ],
   },
-  dinner: {
-    title: 'Dinner',
-    description: 'Indulge in an unforgettable dinner experience under the stars. Our restaurant offers a romantic and elegant ambiance, perfect for a special evening. Enjoy a curated menu of exquisite dishes, paired with fine wines, for a truly memorable night.',
+  'cultural-heritage-tours': {
+    title: 'Cultural Heritage Tours',
+    description: 'Immerse yourself in the rich cultural tapestry of Lake Bunyonyi through guided heritage tours that unveil the fascinating stories of Scottish missionary Dr. Leonard Sharp, the traditional justice system of Punishment Island, and the vibrant island communities that call this lake home. Experience authentic Bakiga culture, traditional crafts, and hear the oral histories that have shaped this UNESCO-worthy landscape.',
     media: [
-      { type: 'image', src: '/images/highlights/dinner-1.png' },
-      { type: 'image', src: '/images/highlights/dinner-3.png' },
+      { type: 'image', src: '/images/activities/wb-2.png' },
+      { type: 'image', src: '/images/highlights/sb-1.jpg' },
+      { type: 'image', src: '/images/activities/breakfast.png' },
       { type: 'image', src: '/images/highlights/dinner-4.png' },
-      {type: 'image', src: '/images/highlights/dinner-5.png' },
-      
+    ],
+  },
+  'volcanic-formation-story': {
+    title: 'Volcanic Formation Story',
+    description: 'Journey back millions of years to witness the dramatic volcanic forces that created Lake Bunyonyi when massive lava flows from the Virunga Mountains carved their path until meeting the Ndego River. Learn how this geological masterpiece became Africa\'s second deepest lake, fed by the pristine River Kagoma from Kigezi Highlands and drained by River Heissesero, creating the aquatic cathedral we see today.',
+    media: [
+      { type: 'image', src: '/images/highlights/dinner-4.png' },
+      { type: 'image', src: '/images/highlights/zl-2.jpg' },
+      { type: 'image', src: '/images/highlights/rm-1.jpg' },
+      { type: 'video', src: '/videos/hero-video.mp4' },
     ],
   },
 };
