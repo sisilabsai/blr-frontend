@@ -17,27 +17,27 @@ const ActivitiesPage = () => {
   const [activities, setActivities] = useState<Activity[]>([
     {
       id: 1,
-      name: "Island Hopping & Cultural Heritage Tour",
+      name: "Luxury Boat Cruise & Island Hopping",
       description: "Explore the 29 mystical islands of Lake Bunyonyi, including historic Bwama Island and the legendary Punishment Island. Discover stories of Scottish missionaries, traditional justice, and island communities.",
       category: "Adventure",
       price: 85,
-      image: "/images/island-hopping.jpg"
+      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311656/lunch_t2mw8t.png"
     },
     {
       id: 2,
-      name: "Birdwatching Paradise",
-      description: "Observe the magnificent Grey Crowned Crane, Pied Kingfisher, Malachite Kingfisher, Papyrus Gonolek, and Great Cormorant in their natural habitat around Africa's bird conference tree.",
-      category: "Family",
-      price: 45,
-      image: "/images/birdwatching.jpg"
+      name: "Speed Boat Adventures",
+      description: "Experience the thrill of high-speed boating across Lake Bunyonyi's crystal-clear waters. Feel the wind as you race between islands with stunning mountain views.",
+      category: "Adventure",
+      price: 95,
+      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311637/sb-1_ok9hhd.jpg"
     },
     {
       id: 3,
-      name: "Traditional Canoeing Experience",
-      description: "Paddle through the crystal-clear waters of Africa's second deepest lake in traditional dugout canoes. Learn ancient fishing techniques while enjoying breathtaking mountain views.",
-      category: "Adventure",
-      price: 35,
-      image: "/images/canoeing.jpg"
+      name: "Water Bicycle Tours",
+      description: "Pedal across Lake Bunyonyi's pristine waters on our unique water bicycles. A fun, eco-friendly way to explore the lake while enjoying panoramic views of all 29 islands.",
+      category: "Family",
+      price: 45,
+      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311724/wb-6_c3ovi4.png"
     },
     {
       id: 4,
@@ -45,39 +45,39 @@ const ActivitiesPage = () => {
       description: "Soar above the pristine waters on our thrilling zip line course, offering panoramic views of all 29 islands and the Virunga Mountains where mountain gorillas roam.",
       category: "Adventure",
       price: 75,
-      image: "/images/zip-lining.jpg"
+      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311707/zl-2_fg9lvt.jpg"
     },
     {
       id: 5,
-      name: "Mountain Biking Trails",
-      description: "Cycle through the scenic Highlands of Kigezi on mountain trails that wind past River Kagoma's source and offer spectacular vistas of Lake Bunyonyi's volcanic landscape.",
-      category: "Adventure",
-      price: 55,
-      image: "/images/mountain-biking.jpg"
+      name: "Luxury Swimming Pool Experience",
+      description: "Relax in our infinity swimming pool overlooking Lake Bunyonyi. Enjoy poolside service, stunning lake views, and the tranquil atmosphere of Africa's Switzerland.",
+      category: "Relaxation",
+      price: 35,
+      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311656/swimming-pool_mpihka.jpg"
     },
     {
       id: 6,
-      name: "Traditional Fishing Experience",
-      description: "Try your hand at catching Tilapia, Crayfish, and Catfish using local techniques. While not as abundant as other Ugandan lakes, the experience is deeply cultural and rewarding.",
+      name: "Gourmet Breakfast Experience",
+      description: "Start your day with our signature breakfast featuring local Ugandan coffee, fresh tropical fruits, and international cuisine served with breathtaking lake views.",
       category: "Family",
-      price: 40,
-      image: "/images/fishing.jpg"
+      price: 25,
+      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311640/dinner-5_ftasf7.png"
     },
     {
       id: 7,
-      name: "Swimming in Sacred Waters",
-      description: "Experience the unique pleasure of swimming in Africa's second deepest lake (44-900m deep). Join locals in this cherished tradition in designated safe swimming areas.",
-      category: "Relaxation",
-      price: 25,
-      image: "/images/swimming.jpg"
+      name: "Traditional Canoeing Experience",
+      description: "Paddle through the crystal-clear waters of Africa's second deepest lake in traditional dugout canoes. Learn ancient fishing techniques while enjoying breathtaking mountain views.",
+      category: "Adventure",
+      price: 35,
+      image: "/images/canoeing.jpg"
     },
     {
       id: 8,
-      name: "Sunset River Walk to Heissesero Outlet",
-      description: "Walk along the scenic River Heissesero outlet path during golden hour, where Lake Bunyonyi's waters begin their journey back to the greater watershed system.",
-      category: "Relaxation",
-      price: 20,
-      image: "/images/river-walk.jpg"
+      name: "Birdwatching Paradise",
+      description: "Observe the magnificent Grey Crowned Crane, Pied Kingfisher, Malachite Kingfisher, Papyrus Gonolek, and Great Cormorant in their natural habitat around Africa's bird conference tree.",
+      category: "Family",
+      price: 45,
+      image: "/images/birdwatching.jpg"
     }
   ]);
   const [filter, setFilter] = useState('All');
