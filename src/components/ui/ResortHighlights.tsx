@@ -84,11 +84,11 @@ const ResortHighlights = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto"
+          className="text-center text-base md:text-lg text-gray-600 mb-8 md:mb-16 max-w-2xl mx-auto px-4"
         >
           Discover extraordinary experiences that make your stay unforgettable
         </motion.p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 px-4 md:px-0">
           {highlights.map((highlight, index) => {
             const isFirst = index === 0;
             const isLast = index === highlights.length - 1;
@@ -101,7 +101,7 @@ const ResortHighlights = () => {
                 className={`${colSpan}`}
               >
                 <motion.div
-                  className="group relative w-full h-72 md:h-96 rounded-2xl shadow-2xl overflow-hidden transform hover:-translate-y-1 md:hover:-translate-y-3 md:hover:rotate-1 transition-all duration-500 cursor-pointer border border-white/20 backdrop-blur-sm"
+                  className="group relative w-full h-64 md:h-72 lg:h-96 rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl overflow-hidden transform hover:-translate-y-1 md:hover:-translate-y-3 md:hover:rotate-1 transition-all duration-500 cursor-pointer border border-white/20 backdrop-blur-sm"
                   variants={cardVariants}
                   initial="hidden"
                   whileInView="visible"
@@ -121,9 +121,9 @@ const ResortHighlights = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-all duration-300" />
                   <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 lg:p-6">
                     <motion.h3 
-                      className="text-xl md:text-2xl lg:text-3xl font-playfair-display font-bold text-white mb-2"
+                      className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-playfair-display font-bold text-white mb-1 md:mb-2"
                       whileHover={{ y: -2 }}
                     >
                       {highlight.title}

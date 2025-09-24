@@ -110,9 +110,9 @@ const ActivitiesPage = () => {
         <div className="absolute top-16 right-20 w-40 h-40 bg-emerald-200/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 left-16 w-32 h-32 bg-blue-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
       </div>
-      <div className="container mx-auto px-4 py-32 relative z-10">
+      <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
         <motion.h1 
-          className="text-5xl md:text-6xl font-bold text-center mb-4 font-playfair-display bg-gradient-to-r from-emerald-700 via-blue-700 to-amber-700 bg-clip-text text-transparent"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-4 font-playfair-display bg-gradient-to-r from-emerald-700 via-blue-700 to-amber-700 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -120,7 +120,7 @@ const ActivitiesPage = () => {
           Activities & Experiences
         </motion.h1>
         <motion.p
-          className="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto"
+          className="text-center text-sm md:text-lg text-gray-600 mb-8 md:mb-16 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -128,13 +128,13 @@ const ActivitiesPage = () => {
           Experience authentic Lake Bunyonyi adventures - from birdwatching Grey Crowned Cranes to exploring 29 mystical islands, canoeing pristine waters, and zip-lining through breathtaking landscapes
         </motion.p>
         <motion.div 
-          className="flex justify-center mb-12 gap-4 flex-wrap"
+          className="flex justify-center mb-8 md:mb-12 gap-2 md:gap-4 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <button
-            className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+            className={`px-4 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-full font-semibold transition-all duration-300 ${
               filter === 'All' 
                 ? 'bg-gradient-to-r from-emerald-500 to-blue-500 text-white shadow-lg transform scale-105' 
                 : 'bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-white border border-white/50 hover:shadow-md'
@@ -174,7 +174,7 @@ const ActivitiesPage = () => {
             Family
           </button>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {filteredActivities.map((activity) => (
             <motion.div
               key={activity.id}
@@ -184,16 +184,16 @@ const ActivitiesPage = () => {
               transition={{ duration: 0.5 }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="relative h-64 w-full overflow-hidden">
+              <div className="relative h-48 md:h-64 w-full overflow-hidden">
                 <Image src={activity.image} alt={activity.name} fill className="object-cover transition-transform duration-500 hover:scale-110" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-2 font-playfair-display bg-gradient-to-r from-emerald-700 to-blue-700 bg-clip-text text-transparent">{activity.name}</h2>
-                <p className="text-gray-700 mb-4 leading-relaxed">{activity.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-emerald-600 bg-clip-text text-transparent">${activity.price}</span>
-                  <button className="px-6 py-2 bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-200 transform hover:scale-105">
+              <div className="p-4 md:p-6">
+                <h2 className="text-lg md:text-2xl font-bold mb-2 font-playfair-display bg-gradient-to-r from-emerald-700 to-blue-700 bg-clip-text text-transparent">{activity.name}</h2>
+                <p className="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">{activity.description}</p>
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-amber-600 to-emerald-600 bg-clip-text text-transparent">${activity.price}</span>
+                  <button className="px-4 md:px-6 py-2 text-sm md:text-base bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-200 transform hover:scale-105">
                     Add to Itinerary
                   </button>
                 </div>

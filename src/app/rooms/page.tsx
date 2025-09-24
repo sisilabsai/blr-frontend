@@ -183,9 +183,9 @@ const RoomsPage = () => {
         <div className="absolute top-20 left-10 w-32 h-32 bg-amber-200/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-32 right-16 w-40 h-40 bg-blue-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
-      <div className="container mx-auto px-4 py-32 relative z-10">
+      <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
         <motion.h1 
-          className="mb-4 text-center text-5xl md:text-6xl font-bold font-playfair-display bg-gradient-to-r from-amber-700 via-blue-700 to-emerald-700 bg-clip-text text-transparent"
+          className="mb-4 text-center text-3xl md:text-5xl lg:text-6xl font-bold font-playfair-display bg-gradient-to-r from-amber-700 via-blue-700 to-emerald-700 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -193,14 +193,14 @@ const RoomsPage = () => {
           Rooms & Suites
         </motion.h1>
         <motion.p
-          className="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto"
+          className="text-center text-sm md:text-lg text-gray-600 mb-8 md:mb-16 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           Luxurious accommodations with breathtaking lake views and modern amenities
         </motion.p>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {rooms.map((room) => (
             <motion.div
               key={room.id}
@@ -211,7 +211,7 @@ const RoomsPage = () => {
               whileHover={{ scale: 1.02 }}
             >
               <Link href={`/rooms/${room.id}`}>
-                <div className="relative h-64 w-full overflow-hidden">
+                <div className="relative h-48 md:h-64 w-full overflow-hidden">
                   <Image
                     src={room.gallery_links?.[0] || '/images/room-placeholder.jpg'}
                     alt={room.name}
@@ -221,12 +221,12 @@ const RoomsPage = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-black/40 transition-all duration-300" />
                 </div>
-                <div className="p-6">
-                  <h2 className="mb-2 text-2xl font-bold font-playfair-display bg-gradient-to-r from-amber-700 to-blue-700 bg-clip-text text-transparent">{room.name}</h2>
-                  <p className="mb-4 text-gray-700 line-clamp-2 leading-relaxed">{room.description}</p>
-                  <div className="flex items-center justify-between">
-                    <p className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">${room.price}</p>
-                    <span className="rounded-full bg-gradient-to-r from-amber-500 to-blue-500 px-4 py-2 text-sm font-medium text-white shadow-lg hover:shadow-xl transition-all duration-200">
+                <div className="p-4 md:p-6">
+                  <h2 className="mb-2 text-lg md:text-2xl font-bold font-playfair-display bg-gradient-to-r from-amber-700 to-blue-700 bg-clip-text text-transparent">{room.name}</h2>
+                  <p className="mb-4 text-sm md:text-base text-gray-700 line-clamp-2 leading-relaxed">{room.description}</p>
+                  <div className="flex items-center justify-between flex-wrap gap-2">
+                    <p className="text-xl md:text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">${room.price}</p>
+                    <span className="rounded-full bg-gradient-to-r from-amber-500 to-blue-500 px-3 md:px-4 py-2 text-xs md:text-sm font-medium text-white shadow-lg hover:shadow-xl transition-all duration-200">
                       View Details
                     </span>
                   </div>
