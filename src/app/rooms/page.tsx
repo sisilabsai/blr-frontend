@@ -7,22 +7,164 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const RoomsPage = () => {
-  const [rooms, setRooms] = useState<Room[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [rooms, setRooms] = useState<Room[]>([
+    {
+      id: 1,
+      name: "Standard Room",
+      description: "A cozy and affordable room with essential amenities, perfect for short stays and budget travelers.",
+      price: 100,
+      capacity: 2,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg", 
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311629/rm-5_fuaxjl.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    },
+    {
+      id: 2,
+      name: "Premium Room",
+      description: "A spacious room with modern decor, featuring a private balcony offering serene views of Lake Bunyonyi.",
+      price: 200,
+      capacity: 2,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311629/rm-5_fuaxjl.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311628/rm-6_v3fvv4.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    },
+    {
+      id: 3,
+      name: "Executive Room",
+      description: "Sophisticated accommodations with premium finishes, work desk, and exclusive access to executive lounge with panoramic lake views.",
+      price: 280,
+      capacity: 2,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311628/rm-6_v3fvv4.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-3_tafmi5.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    },
+    {
+      id: 4,
+      name: "Luxury Suite",
+      description: "An elegant suite with a private balcony, jacuzzi, and personalized service for an unforgettable stay.",
+      price: 350,
+      capacity: 4,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311628/rm-6_v3fvv4.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-3_tafmi5.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-4_ypxdsz.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    },
+    {
+      id: 5,
+      name: "Deluxe Room",
+      description: "Luxurious accommodations with premium amenities, marble bathrooms, and floor-to-ceiling windows showcasing the mystical 29 islands of Lake Bunyonyi.",
+      price: 320,
+      capacity: 3,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-4_ypxdsz.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-1_klz0kf.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    },
+    {
+      id: 6,
+      name: "Family Cottage",
+      description: "A spacious cottage designed for families, featuring multiple bedrooms, a living area, and easy access to outdoor activities.",
+      price: 450,
+      capacity: 6,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-4_ypxdsz.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-1_klz0kf.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-2_hzguyc.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    },
+    {
+      id: 7,
+      name: "Honeymoon Suite",
+      description: "A private suite designed for couples, featuring a king-size bed, candlelit decor, and panoramic lake views.",
+      price: 500,
+      capacity: 2,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-2_hzguyc.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-5_qdfmye.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    },
+    {
+      id: 8,
+      name: "Lakefront Cottage",
+      description: "A traditional yet luxurious cottage built with local materials, located right by the lake for a unique eco-luxury experience.",
+      price: 550,
+      capacity: 3,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-5_qdfmye.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311628/rm-6_v3fvv4.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    },
+    {
+      id: 9,
+      name: "Private Villa",
+      description: "A fully serviced private villa with a plunge pool, lounge area, and butler service – ideal for families or groups seeking exclusivity.",
+      price: 1200,
+      capacity: 8,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-1_klz0kf.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    },
+    {
+      id: 10,
+      name: "Presidential Suite",
+      description: "The ultimate luxury suite featuring a private infinity pool, personal chef service, and unmatched panoramic views of Lake Bunyonyi.",
+      price: 2000,
+      capacity: 6,
+      gallery_links: [
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-3_tafmi5.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-4_ypxdsz.jpg"
+      ],
+      created_at: "2025-09-19 21:15:54",
+      updated_at: "2025-09-19 21:15:54"
+    }
+  ]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchRooms = async () => {
       try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/rooms`);
-        const data = await res.json();
-        setRooms(data);
+        if (res.ok) {
+          const data = await res.json();
+          setRooms(data);
+        }
       } catch (error) {
-        console.error('Error fetching rooms:', error);
-      } finally {
-        setLoading(false);
+        console.log('Using static rooms data - API not available yet');
       }
     };
 
+    // Try to fetch from API, but fallback to static data
     fetchRooms();
   }, []);
 

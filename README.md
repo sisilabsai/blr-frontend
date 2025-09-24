@@ -1,3 +1,9 @@
+# 🌟 Bunyonyi Luxury Resort - Official Website
+
+**Live Demo**: https://blr-frontend-git-main-wilson-ecaats-projects.vercel.app/
+
+Experience the authentic beauty of Lake Bunyonyi, Africa's second deepest lake, with our luxury resort website featuring official geological data, cultural heritage, and 29 mystical islands.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
