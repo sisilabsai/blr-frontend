@@ -7,43 +7,43 @@ import React from 'react';
 
 const highlights = [
   {
-    title: 'Speed Boats',
-    description: 'Explore the lake at high speeds.',
+    title: '29 Mystical Islands',
+    description: 'Explore legendary Bwama Island and mysterious Punishment Island across Lake Bunyonyi.',
     image: '/images/highlights/sb-1.jpg',
   },
   {
-    title: 'Swimming Pool',
-    description: 'Relax by our infinity pool.',
+    title: 'Africa\'s 2nd Deepest Lake',
+    description: 'Swim in crystal waters that plunge 900 meters into volcanic depths.',
     image: '/images/highlights/sp-1.jpg',
   },
   {
-    title: 'Zipline',
-    description: 'Experience the thrill of our zipline.',
+    title: 'Virunga Mountain Views',
+    description: 'Witness breathtaking vistas of the volcanic mountains, home to mountain gorillas.',
     image: '/images/highlights/zl-2.jpg',
   },
   {
-    title: 'Premium Rooms',
-    description: 'Luxurious rooms with stunning views.',
+    title: 'Luxury Lakefront Suites',
+    description: 'Wake up to panoramic views of pristine waters and rolling hills.',
     image: '/images/highlights/rm-1.jpg',
   },
   {
-    title: 'Water Bicycle',
-    description: 'A unique experience on the water.',
+    title: 'Traditional Canoeing',
+    description: 'Navigate ancient waters in authentic dugout canoes like local fishermen.',
     image: '/images/highlights/wb-4.png',
   },
   {
-    title: 'Breakfast',
-    description: 'Start your day with a delicious breakfast.',
+    title: 'Birdwatcher\'s Paradise',
+    description: 'Spot Grey Crowned Cranes, Kingfishers, and exotic birds at the conference tree.',
     image: '/images/activities/breakfast.png',
   },
   {
-    title: 'Lunch',
-    description: 'Enjoy a delightful lunch with a view.',
+    title: 'Cultural Heritage Tours',
+    description: 'Discover Scottish missionary history and traditional island communities.',
     image: '/images/activities/wb-2.png',
   },
   {
-    title: 'Dinner',
-    description: 'Savor an exquisite dinner under the stars.',
+    title: 'Volcanic Formation Story',
+    description: 'Learn how Virunga lava flows created this natural wonder blocking River Ndego.',
     image: '/images/highlights/dinner-4.png',
   },
 ];

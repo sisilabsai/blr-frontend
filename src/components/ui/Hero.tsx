@@ -68,7 +68,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl font-inter drop-shadow text-center px-4"
         >
-          Experience the tranquility of Lake Bunyonyi
+          Discover Africa&apos;s second deepest lake - where volcanic legends meet luxury on the shores of the mystical Lake Bunyonyi
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

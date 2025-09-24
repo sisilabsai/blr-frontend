@@ -36,7 +36,7 @@ const LakeMap = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto"
         >
-          Navigate through pristine waters and discover hidden islands
+          Navigate 29 legendary islands formed by ancient Virunga lava flows, fed by River Kagoma from Kigezi Highlands and drained by River Heissesero - Africa&apos;s second deepest lake awaits your exploration
         </motion.p>
         <div className="relative">
           <img src="/images/lake-bunyonyi.svg" alt="Lake Bunyonyi Map" className="w-full" />

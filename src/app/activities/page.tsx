@@ -14,14 +14,85 @@ interface Activity {
 }
 
 const ActivitiesPage = () => {
-  const [activities, setActivities] = useState<Activity[]>([]);
+  const [activities, setActivities] = useState<Activity[]>([
+    {
+      id: 1,
+      name: "Island Hopping & Cultural Heritage Tour",
+      description: "Explore the 29 mystical islands of Lake Bunyonyi, including historic Bwama Island and the legendary Punishment Island. Discover stories of Scottish missionaries, traditional justice, and island communities.",
+      category: "Adventure",
+      price: 85,
+      image: "/images/island-hopping.jpg"
+    },
+    {
+      id: 2,
+      name: "Birdwatching Paradise",
+      description: "Observe the magnificent Grey Crowned Crane, Pied Kingfisher, Malachite Kingfisher, Papyrus Gonolek, and Great Cormorant in their natural habitat around Africa's bird conference tree.",
+      category: "Family",
+      price: 45,
+      image: "/images/birdwatching.jpg"
+    },
+    {
+      id: 3,
+      name: "Traditional Canoeing Experience",
+      description: "Paddle through the crystal-clear waters of Africa's second deepest lake in traditional dugout canoes. Learn ancient fishing techniques while enjoying breathtaking mountain views.",
+      category: "Adventure",
+      price: 35,
+      image: "/images/canoeing.jpg"
+    },
+    {
+      id: 4,
+      name: "Zip Lining Over Lake Bunyonyi",
+      description: "Soar above the pristine waters on our thrilling zip line course, offering panoramic views of all 29 islands and the Virunga Mountains where mountain gorillas roam.",
+      category: "Adventure",
+      price: 75,
+      image: "/images/zip-lining.jpg"
+    },
+    {
+      id: 5,
+      name: "Mountain Biking Trails",
+      description: "Cycle through the scenic Highlands of Kigezi on mountain trails that wind past River Kagoma's source and offer spectacular vistas of Lake Bunyonyi's volcanic landscape.",
+      category: "Adventure",
+      price: 55,
+      image: "/images/mountain-biking.jpg"
+    },
+    {
+      id: 6,
+      name: "Traditional Fishing Experience",
+      description: "Try your hand at catching Tilapia, Crayfish, and Catfish using local techniques. While not as abundant as other Ugandan lakes, the experience is deeply cultural and rewarding.",
+      category: "Family",
+      price: 40,
+      image: "/images/fishing.jpg"
+    },
+    {
+      id: 7,
+      name: "Swimming in Sacred Waters",
+      description: "Experience the unique pleasure of swimming in Africa's second deepest lake (44-900m deep). Join locals in this cherished tradition in designated safe swimming areas.",
+      category: "Relaxation",
+      price: 25,
+      image: "/images/swimming.jpg"
+    },
+    {
+      id: 8,
+      name: "Sunset River Walk to Heissesero Outlet",
+      description: "Walk along the scenic River Heissesero outlet path during golden hour, where Lake Bunyonyi's waters begin their journey back to the greater watershed system.",
+      category: "Relaxation",
+      price: 20,
+      image: "/images/river-walk.jpg"
+    }
+  ]);
   const [filter, setFilter] = useState('All');
 
   useEffect(() => {
     const fetchActivities = async () => {
-      const res = await fetch('http://localhost:8000/api/activities');
-      const data = await res.json();
-      setActivities(data);
+      try {
+        const res = await fetch('http://localhost:8000/api/activities');
+        if (res.ok) {
+          const data = await res.json();
+          setActivities(data);
+        }
+      } catch (error) {
+        console.log('Using default activities - API not available yet');
+      }
     };
 
     fetchActivities();
@@ -54,7 +125,7 @@ const ActivitiesPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Discover thrilling adventures and peaceful moments by the lake
+          Experience authentic Lake Bunyonyi adventures - from birdwatching Grey Crowned Cranes to exploring 29 mystical islands, canoeing pristine waters, and zip-lining through breathtaking landscapes
         </motion.p>
         <motion.div 
           className="flex justify-center mb-12 gap-4 flex-wrap"

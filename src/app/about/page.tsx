@@ -36,8 +36,12 @@ const AboutPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+            <h2 className="text-3xl font-bold mb-6 font-playfair-display bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">Our Vision</h2>
+            <p className="text-xl text-gray-800 mb-6 font-semibold italic">
+              &quot;To have the most beautiful luxurious resort in Uganda&quot;
+            </p>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Bunyonyi Luxury Resort is a haven of tranquility and luxury nestled on the shores of the beautiful Lake Bunyonyi. Our resort offers a unique blend of modern comfort and traditional African charm, providing our guests with an unforgettable experience.
+              Bunyonyi Luxury Resort stands as a beacon of elegance on the shores of Africa&apos;s second deepest lake. Nestled where volcanic legends meet luxury, our resort offers an extraordinary gateway to the mystical Lake Bunyonyi - a natural wonder formed by ancient lava flows from the legendary Virunga Mountains, home of the mountain gorillas.
             </p>
           </motion.div>
           
@@ -47,9 +51,12 @@ const AboutPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <h2 className="text-3xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">Our Story</h2>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Founded in 2025, our resort was built with a vision to create a world-class destination that showcases the natural beauty of Lake Bunyonyi. We are proud of our heritage and our commitment to providing our guests with the highest level of service.
+            <h2 className="text-3xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">The Lake&apos;s Legendary Origin</h2>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              Lake Bunyonyi&apos;s dramatic formation tells a tale of volcanic power and natural artistry. Born from massive lava flows cascading down from the majestic Virunga Mountains, the molten rock carved its path until it encountered the Ndego River. As the lava cooled and solidified, it created a natural dam that blocked the river&apos;s flow, giving birth to this extraordinary lake that now stretches before us in all its mystical beauty.
+            </p>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              Fed by the pristine waters of River Kagoma flowing from the Highlands of Kigezi, and gracefully draining through River Heissesero, Lake Bunyonyi maintains its crystal-clear waters that reflect the surrounding hills like a natural mirror. With depths ranging from 44 to an astounding 900 meters, it ranks as the second deepest lake in Africa and third deepest in the world - a aquatic cathedral of unprecedented depth and beauty.
             </p>
           </motion.div>
           
@@ -59,9 +66,12 @@ const AboutPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <h2 className="text-3xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-emerald-700 to-amber-700 bg-clip-text text-transparent">Sustainability</h2>
+            <h2 className="text-3xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-emerald-700 to-amber-700 bg-clip-text text-transparent">29 Islands of Wonder</h2>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              Scattered across Lake Bunyonyi&apos;s pristine waters lie 29 enchanting islands, each with its own story and character. The largest, Bwama Island (locally known as Njuyeera Island), once housed a leprosy treatment center established by Scottish missionary Dr. Leonard Sharp - its facilities now serve as schools for island residents, transforming a place of healing into one of learning.
+            </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              We are committed to sustainable tourism and preserving the natural environment of Lake Bunyonyi. We work closely with the local Batwa community to support their culture and traditions.
+              Among the most intriguing is tiny Akampene Island, known as Punishment Island - a sobering reminder of traditional justice where unmarried pregnant girls were once abandoned. Today, the ancient tree that witnessed those harsh times has become a sanctuary for all bird species around Lake Bunyonyi, where they gather in natural conference, turning a place of punishment into one of unity and life.
             </p>
           </motion.div>
         </div>
