@@ -18,13 +18,13 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="backdrop-blur-lg bg-white/60 shadow-xl border-b border-white/30 fixed w-full z-50 transition-all duration-300">
+    <nav className="backdrop-blur-lg bg-white/60 shadow-xl border-b border-white/30 fixed w-full z-[100] transition-all duration-300">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link 
             href="/" 
-            className="text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-400 bg-clip-text text-transparent drop-shadow z-50 relative"
+            className="text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-400 bg-clip-text text-transparent drop-shadow z-[80] relative"
             onClick={closeMenu}
           >
             <span className="block md:hidden">BLR</span>
@@ -53,7 +53,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden relative z-50 p-2 rounded-lg bg-white/80 shadow-lg"
+            className="md:hidden relative z-[80] p-2 rounded-lg bg-white/80 shadow-lg"
             onClick={toggleMenu}
             whileTap={{ scale: 0.95 }}
             aria-label="Toggle menu"
@@ -83,7 +83,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden z-[60]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -97,7 +97,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white/95 backdrop-blur-xl shadow-2xl md:hidden"
+            className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white backdrop-blur-xl shadow-2xl md:hidden z-[70] border-l border-gray-200"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
