@@ -27,7 +27,7 @@ const AboutPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Discover the story behind Lake Bunyonyi's premier luxury destination
+          Discover the story behind Lake Bunyonyi&apos;s premier luxury destination
         </motion.p>
         <div className="max-w-4xl mx-auto">
           <motion.div

@@ -1,7 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 
-
-const Footer = () => {
+export function Footer() {
   return (
     <footer className="bg-gradient-to-tr from-blue-900 via-emerald-700 to-amber-500 text-white py-8 md:py-12 mt-16 md:mt-24 shadow-inner">
       <div className="container mx-auto px-4">
@@ -13,10 +13,10 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h3 className="text-xl md:text-2xl font-bold mb-4 font-playfair-display">Quick Links</h3>
             <ul className="space-y-2 text-sm md:text-base">
-              <li><a href="/rooms" className="hover:underline transition-colors duration-200 inline-block py-1">Rooms</a></li>
-              <li><a href="/activities" className="hover:underline transition-colors duration-200 inline-block py-1">Activities</a></li>
-              <li><a href="/about" className="hover:underline transition-colors duration-200 inline-block py-1">About</a></li>
-              <li><a href="/contact" className="hover:underline transition-colors duration-200 inline-block py-1">Contact</a></li>
+              <li><Link href="/rooms" className="hover:underline transition-colors duration-200 inline-block py-1">Rooms</Link></li>
+              <li><Link href="/activities" className="hover:underline transition-colors duration-200 inline-block py-1">Activities</Link></li>
+              <li><Link href="/about" className="hover:underline transition-colors duration-200 inline-block py-1">About</Link></li>
+              <li><Link href="/contact" className="hover:underline transition-colors duration-200 inline-block py-1">Contact</Link></li>
             </ul>
           </div>
           <div className="text-center md:text-left">

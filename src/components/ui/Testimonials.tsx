@@ -24,8 +24,8 @@ const Testimonials = () => {
     <section className="py-24 bg-gradient-to-br from-emerald-50 via-blue-50 to-amber-50 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-16 right-20 text-emerald-200/30 text-9xl font-serif">"</div>
-        <div className="absolute bottom-16 left-20 text-blue-200/30 text-9xl font-serif transform rotate-180">"</div>
+        <div className="absolute top-16 right-20 text-emerald-200/30 text-9xl font-serif">&quot;</div>
+        <div className="absolute bottom-16 left-20 text-blue-200/30 text-9xl font-serif transform rotate-180">&quot;</div>
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <motion.h2
@@ -44,7 +44,7 @@ const Testimonials = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center text-lg text-gray-600 mb-16 max-w-2xl mx-auto"
         >
-          Real experiences from guests who've discovered the magic of Lake Bunyonyi
+          Real experiences from guests who&apos;ve discovered the magic of Lake Bunyonyi
         </motion.p>
         <Carousel
           opts={{
@@ -68,7 +68,7 @@ const Testimonials = () => {
                     whileHover={{ y: -5, scale: 1.02 }}
                   >
                     <div>
-                      <div className="text-amber-400 text-4xl mb-4">"</div>
+                      <div className="text-amber-400 text-4xl mb-4">&quot;</div>
                       <p className="text-gray-700 font-inter text-lg mb-6 leading-relaxed italic">
                         {testimonial.quote}
                       </p>

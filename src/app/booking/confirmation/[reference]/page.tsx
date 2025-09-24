@@ -7,9 +7,9 @@ import Link from 'next/link';
 import { toast } from 'sonner';
 
 interface BookingConfirmationProps {
-  params: {
+  params: Promise<{
     reference: string;
-  };
+  }>;
 }
 
 interface Booking {
@@ -34,11 +34,20 @@ interface Booking {
 export default function BookingConfirmationPage({ params }: BookingConfirmationProps) {
   const [booking, setBooking] = useState<Booking | null>(null);
   const [loading, setLoading] = useState(true);
+  const [reference, setReference] = useState<string>('');
+
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolvedParams = await params;
+      setReference(resolvedParams.reference);
+    };
+    fetchParams();
+  }, [params]);
 
   useEffect(() => {
     const fetchBooking = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookings/${params.reference}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bookings/${reference}`);
         if (!res.ok) throw new Error('Booking not found');
         const data = await res.json();
         setBooking(data);
@@ -50,10 +59,10 @@ export default function BookingConfirmationPage({ params }: BookingConfirmationP
       }
     };
 
-    if (params.reference) {
+    if (reference) {
       fetchBooking();
     }
-  }, [params.reference]);
+  }, [reference]);
 
   if (loading) {
     return (

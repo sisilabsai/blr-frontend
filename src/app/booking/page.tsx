@@ -29,7 +29,7 @@ const BookingPage = () => {
     dates: string;
     guests: number;
     room: Room | null;
-    activities: any[];
+    activities: Activity[];
     totalPrice: number;
   }>({
     dates: '',

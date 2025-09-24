@@ -18,7 +18,7 @@ const AdminPage = () => {
       try {
         const res = await api.get('/user');
         setUser(res.data);
-      } catch (error) {
+      } catch (_error) {
         router.push('/admin/login');
       }
     };
