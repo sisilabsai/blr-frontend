@@ -4,7 +4,7 @@ import MediaGallery from '@/components/ui/MediaGallery';
 import { motion } from 'framer-motion';
 import { useParams, useRouter } from 'next/navigation';
 import React from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaCalendarAlt, FaHome, FaShare } from 'react-icons/fa';
 import ShareButton from '@/components/ui/ShareButton';
 
 interface Media {
@@ -143,28 +143,70 @@ const HighlightDetailPage = () => {
         {highlight.description}
       </motion.p>
       <MediaGallery media={highlight.media} />
-      <div className="flex justify-center gap-8 mt-12">
-        <button
+      
+      {/* Mobile-optimized action buttons */}
+      <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mt-8 md:mt-12">
+        {/* Home Button */}
+        <motion.a
+          href="/"
+          className="group relative w-12 h-12 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          title="Back to Home"
+        >
+          <FaHome className="w-5 h-5 md:w-6 md:h-6 text-gray-600 group-hover:text-blue-600 transition-colors" />
+        </motion.a>
+
+        {/* Previous Button */}
+        <motion.button
           onClick={() => navigateToHighlight('prev')}
-          className="flex items-center gap-2 px-6 py-3 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition-colors"
+          className="group relative w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          title="Previous Highlight"
         >
-          <FaArrowLeft />
-          Previous
-        </button>
-        <a
+          <FaArrowLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
+        </motion.button>
+
+        {/* Book Now - Primary Action */}
+        <motion.a
           href="/booking"
-          className="px-8 py-4 bg-rose-500 text-white font-bold rounded-full hover:bg-rose-600 transition-colors text-lg"
+          className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.95 }}
         >
-          Book This Experience
-        </a>
-        <ShareButton title={highlight.title} url={url} />
-        <button
+          <FaCalendarAlt className="w-4 h-4 md:w-5 md:h-5 text-white" />
+          <span className="text-white font-semibold text-sm md:text-base whitespace-nowrap">Book Now</span>
+        </motion.a>
+
+        {/* Share Button */}
+        <motion.div
+          className="group relative w-12 h-12 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <ShareButton title={highlight.title} url={url} />
+        </motion.div>
+
+        {/* Next Button */}
+        <motion.button
           onClick={() => navigateToHighlight('next')}
-          className="flex items-center gap-2 px-6 py-3 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition-colors"
+          className="group relative w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          title="Next Highlight"
         >
-          Next
-          <FaArrowRight />
-        </button>
+          <FaArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
+        </motion.button>
+      </div>
+
+      {/* Optional: Add labels below for better UX on larger screens */}
+      <div className="hidden md:flex items-center justify-center gap-4 mt-3 text-xs text-gray-500">
+        <span className="w-14 text-center">Home</span>
+        <span className="w-14 text-center">Previous</span>
+        <span className="px-8 text-center">Book Experience</span>
+        <span className="w-14 text-center">Share</span>
+        <span className="w-14 text-center">Next</span>
       </div>
     </div>
   );

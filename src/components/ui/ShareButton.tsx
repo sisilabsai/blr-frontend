@@ -34,10 +34,10 @@ const ShareButton = ({ title, url }: { title: string; url: string }) => {
     <div className="relative">
       <button
         onClick={() => setShowShareOptions(!showShareOptions)}
-        className="flex items-center gap-2 px-6 py-3 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition-colors"
+        className="w-full h-full flex items-center justify-center group"
+        title="Share this highlight"
       >
-        <FaShareAlt />
-        Share
+        <FaShareAlt className="w-5 h-5 md:w-6 md:h-6 text-gray-600 group-hover:text-blue-600 transition-colors" />
       </button>
       <AnimatePresence>
         {showShareOptions && (
@@ -45,7 +45,7 @@ const ShareButton = ({ title, url }: { title: string; url: string }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className="absolute bottom-full right-0 mb-2 w-48 bg-white rounded-lg shadow-xl p-2 z-10"
+            className="absolute bottom-full right-0 mb-2 w-40 md:w-48 bg-white rounded-lg shadow-xl p-2 z-50 border border-gray-200"
           >
             {socialShare.map((social) => (
               <a
