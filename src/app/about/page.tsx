@@ -24,7 +24,7 @@ const AboutPage = () => {
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 border border-white/50">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">Our Vision</h3>
             <p className="text-lg md:text-xl text-gray-800 mb-4 font-semibold italic">
-              "To have the most beautiful luxurious resort in Uganda"
+              &quot;To have the most beautiful luxurious resort in Uganda&quot;
             </p>
             <p className="text-sm md:text-base text-gray-700 leading-relaxed">
               Bunyonyi Luxury Resort stands as a beacon of elegance on the shores of Africa&apos;s second deepest lake. Nestled where volcanic legends meet luxury, our resort offers an extraordinary gateway to the mystical Lake Bunyonyi - a natural wonder formed by ancient lava flows from the legendary Virunga Mountains, home of the mountain gorillas.
@@ -105,7 +105,7 @@ const AboutPage = () => {
 
             {/* Birds */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-white/50">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-blue-700 to-amber-700 bg-clip-text text-transparent">🦅 Birdwatcher's Paradise</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-blue-700 to-amber-700 bg-clip-text text-transparent">🦅 Birdwatcher&apos;s Paradise</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-emerald-50 rounded-lg">
                   <span className="text-2xl">👑</span>
