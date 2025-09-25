@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navLinks = [
   { href: '/rooms', label: 'Rooms' },
   { href: '/activities', label: 'Activities' },
+  { href: '/gallery', label: 'Gallery' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -148,7 +149,7 @@ const Navbar = () => {
                 transition={{ duration: 0.3, delay: 0.7 }}
               >
                 <h3 className="font-semibold text-gray-800 mb-2">Contact Us</h3>
-                <p className="text-sm text-gray-600 mb-1">+256 123 456 789</p>
+                <p className="text-sm text-gray-600 mb-1">+256 390 456 789</p>
                 <p className="text-sm text-gray-600">info@bunyonyiluxuryresort.com</p>
               </motion.div>
             </div>

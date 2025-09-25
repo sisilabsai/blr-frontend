@@ -15,6 +15,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm md:text-base">
               <li><Link href="/rooms" className="hover:underline transition-colors duration-200 inline-block py-1">Rooms</Link></li>
               <li><Link href="/activities" className="hover:underline transition-colors duration-200 inline-block py-1">Activities</Link></li>
+              <li><Link href="/gallery" className="hover:underline transition-colors duration-200 inline-block py-1">Gallery</Link></li>
               <li><Link href="/about" className="hover:underline transition-colors duration-200 inline-block py-1">About</Link></li>
               <li><Link href="/contact" className="hover:underline transition-colors duration-200 inline-block py-1">Contact</Link></li>
             </ul>
