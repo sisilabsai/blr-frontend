@@ -1,34 +1,20 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FaCalendarAlt, 
   FaUsers, 
   FaBed, 
-  FaSwimmingPool, 
-  FaWifi, 
-  FaCoffee,
-  FaParking,
-  FaConciergeBell,
-  FaSpa,
   FaUmbrellaBeach,
   FaChevronLeft,
   FaChevronRight,
   FaCheck,
   FaStar,
-  FaHeart,
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
   FaCreditCard,
   FaLock,
-  FaGift,
-  FaPercent,
-  FaClock,
   FaShieldAlt,
-  FaExpand,
-  FaImage
+  FaExpand
 } from 'react-icons/fa';
 
 interface Room {
