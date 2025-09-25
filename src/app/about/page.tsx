@@ -27,7 +27,7 @@ const AboutPage = () => {
               "To have the most beautiful luxurious resort in Uganda"
             </p>
             <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-              Bunyonyi Luxury Resort stands as a beacon of elegance on the shores of Africa's second deepest lake. Nestled where volcanic legends meet luxury, our resort offers an extraordinary gateway to the mystical Lake Bunyonyi - a natural wonder formed by ancient lava flows from the legendary Virunga Mountains, home of the mountain gorillas.
+              Bunyonyi Luxury Resort stands as a beacon of elegance on the shores of Africa&apos;s second deepest lake. Nestled where volcanic legends meet luxury, our resort offers an extraordinary gateway to the mystical Lake Bunyonyi - a natural wonder formed by ancient lava flows from the legendary Virunga Mountains, home of the mountain gorillas.
             </p>
           </div>
         </div>
@@ -40,9 +40,9 @@ const AboutPage = () => {
       content: (
         <div className="space-y-6">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 border border-white/50">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">The Lake's Legendary Origin</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">The Lake&apos;s Legendary Origin</h3>
             <p className="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-              Lake Bunyonyi's dramatic formation tells a tale of volcanic power and natural artistry. Born from massive lava flows cascading down from the majestic <strong>Virunga Mountains</strong> (home of Mountain Gorillas), the molten rock carved its path until it encountered the <strong>Ndego River</strong>. As the lava cooled and solidified, it created a natural dam that blocked the river's flow, giving birth to this extraordinary lake.
+              Lake Bunyonyi&apos;s dramatic formation tells a tale of volcanic power and natural artistry. Born from massive lava flows cascading down from the majestic <strong>Virunga Mountains</strong> (home of Mountain Gorillas), the molten rock carved its path until it encountered the <strong>Ndego River</strong>. As the lava cooled and solidified, it created a natural dam that blocked the river&apos;s flow, giving birth to this extraordinary lake.
             </p>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="bg-blue-50 p-4 rounded-xl">
@@ -111,7 +111,7 @@ const AboutPage = () => {
                   <span className="text-2xl">👑</span>
                   <div>
                     <h4 className="font-semibold">Grey Crowned Crane</h4>
-                    <p className="text-sm text-gray-600">Uganda's national bird</p>
+                    <p className="text-sm text-gray-600">Uganda&apos;s national bird</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-lg">
@@ -138,7 +138,7 @@ const AboutPage = () => {
               </div>
               <div className="mt-4 p-4 bg-gradient-to-r from-amber-100 to-emerald-100 rounded-xl">
                 <h4 className="font-semibold text-gray-800 mb-2">🌳 The Conference Tree</h4>
-                <p className="text-sm text-gray-700">On Punishment Island stands the ancient tree where all bird species gather for their natural "conference" - a magical sight to behold!</p>
+                <p className="text-sm text-gray-700">On Punishment Island stands the ancient tree where all bird species gather for their natural &quot;conference&quot; - a magical sight to behold!</p>
               </div>
             </div>
           </div>
@@ -178,7 +178,7 @@ const AboutPage = () => {
                   The smallest island with the most powerful story. Used in traditional justice where unmarried pregnant girls were abandoned to starve.
                 </p>
                 <p className="text-sm text-gray-700">
-                  <strong>Legacy:</strong> The ancient tree still stands as home to all bird species' "conference" - unity from tragedy.
+                  <strong>Legacy:</strong> The ancient tree still stands as home to all bird species&apos; &quot;conference&quot; - unity from tragedy.
                 </p>
               </div>
             </div>
@@ -186,7 +186,7 @@ const AboutPage = () => {
             <div className="bg-gradient-to-r from-blue-100 to-emerald-100 p-6 rounded-xl">
               <h4 className="text-lg font-bold text-blue-800 mb-3">🗺️ Island Distribution</h4>
               <p className="text-sm text-gray-700 mb-2">
-                The 29 islands are scattered across Lake Bunyonyi's pristine waters, each with unique characteristics:
+                The 29 islands are scattered across Lake Bunyonyi&apos;s pristine waters, each with unique characteristics:
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
                 <div className="text-center"><strong>Northern:</strong> 7 islands</div>
@@ -289,9 +289,9 @@ const AboutPage = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-4 font-playfair-display bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">🎣 Fishing & Aquatic Life</h3>
             
             <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-emerald-50 rounded-xl">
-              <h4 className="font-semibold text-blue-800 mb-2">🤔 "Do they do fishing? Yes, but not as much as normal lakes in Uganda."</h4>
+              <h4 className="font-semibold text-blue-800 mb-2">🤔 &quot;Do they do fishing? Yes, but not as much as normal lakes in Uganda.&quot;</h4>
               <p className="text-sm text-gray-700">
-                While Lake Bunyonyi supports some fishing activities, it's more limited compared to other Ugandan lakes due to its unique ecosystem and depth characteristics.
+                While Lake Bunyonyi supports some fishing activities, it&apos;s more limited compared to other Ugandan lakes due to its unique ecosystem and depth characteristics.
               </p>
             </div>
 
@@ -351,7 +351,7 @@ const AboutPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Explore the comprehensive story of Africa's Switzerland - from volcanic origins to wildlife paradise, 29 mystical islands, and authentic tourism experiences in Uganda's most beautiful lake.
+          Explore the comprehensive story of Africa&apos;s Switzerland - from volcanic origins to wildlife paradise, 29 mystical islands, and authentic tourism experiences in Uganda&apos;s most beautiful lake.
         </motion.p>
 
         {/* Tab Navigation */}
