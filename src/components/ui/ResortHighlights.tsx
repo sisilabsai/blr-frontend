@@ -4,47 +4,56 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
+import { FaVideo } from 'react-icons/fa';
 
 const highlights = [
   {
     title: '29 Mystical Islands',
     description: 'Explore legendary Bwama Island and mysterious Punishment Island across Lake Bunyonyi.',
-    image: '/images/highlights/sb-1.jpg',
+    media: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350750/WhatsApp_Image_2025-10-13_at_12.55.04_16d8a42c_ysupy2.jpg',
+    type: 'image',
   },
   {
     title: 'Africa\'s 2nd Deepest Lake',
     description: 'Swim in crystal waters that plunge 900 meters into volcanic depths.',
-    image: '/images/highlights/sp-1.jpg',
+    media: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362018/new-7_p0ieul.mp4',
+    type: 'video',
   },
   {
     title: 'Virunga Mountain Views',
     description: 'Witness breathtaking vistas of the volcanic mountains, home to mountain gorillas.',
-    image: '/images/highlights/zl-2.jpg',
+    media: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362046/new-13_nyazfc.mp4',
+    type: 'video',
   },
   {
     title: 'Luxury Lakefront Suites',
     description: 'Wake up to panoramic views of pristine waters and rolling hills.',
-    image: '/images/highlights/rm-1.jpg',
+    media: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg',
+    type: 'image',
   },
   {
     title: 'Traditional Canoeing',
     description: 'Navigate ancient waters in authentic dugout canoes like local fishermen.',
-    image: '/images/highlights/wb-4.png',
+    media: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760361833/new-4_piblee.jpg',
+    type: 'image',
   },
   {
     title: 'Birdwatcher\'s Paradise',
     description: 'Spot Grey Crowned Cranes, Kingfishers, and exotic birds at the conference tree.',
-    image: '/images/activities/breakfast.png',
+    media: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350885/WhatsApp_Image_2025-10-13_at_12.55.09_dc7e0506_snhdyh.jpg',
+    type: 'image',
   },
   {
     title: 'Cultural Heritage Tours',
     description: 'Discover Scottish missionary history and traditional island communities.',
-    image: '/images/activities/wb-2.png',
+    media: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760362203/new-1_isri7b.jpg',
+    type: 'image',
   },
   {
     title: 'Volcanic Formation Story',
     description: 'Learn how Virunga lava flows created this natural wonder blocking River Ndego.',
-    image: '/images/highlights/dinner-4.png',
+    media: '/images/highlights/dinner-4.png',
+    type: 'image',
   },
 ];
 
@@ -112,13 +121,36 @@ const ResortHighlights = () => {
                     boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
                   }}
                 >
-                  <Image
-                    src={highlight.image}
-                    alt={highlight.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
+                  <div className="relative w-full h-full">
+                    {highlight.type === 'video' ? (
+                      <video
+                        src={highlight.media}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    ) : (
+                      <Image
+                        src={highlight.media}
+                        alt={highlight.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                    )}
+                    {highlight.type === 'video' && (
+                      <motion.div
+                        className="absolute top-4 right-4 bg-black/50 rounded-full p-2"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+                      >
+                        <FaVideo className="w-4 h-4 text-white" />
+                      </motion.div>
+                    )}
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-all duration-300" />
                   <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 lg:p-6">

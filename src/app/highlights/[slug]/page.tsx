@@ -23,30 +23,26 @@ const highlightDetails: { [key: string]: Highlight } = {
     title: '29 Mystical Islands',
     description: 'Embark on a journey through Lake Bunyonyi\'s legendary 29 islands, each with its own unique story and character. From the historic Bwama Island (Njuyeera), once home to a Scottish missionary leprosy treatment center, to the mysterious Punishment Island (Akampene) where traditional justice unfolded, discover the rich tapestry of culture, history, and natural beauty that makes each island a treasure waiting to be explored.',
     media: [
-      { type: 'image', src: '/images/highlights/sb-1.jpg' },
-      { type: 'image', src: '/images/activities/wb-2.png' },
-      { type: 'image', src: '/images/highlights/lunch.png' },
-      { type: 'video', src: '/videos/hero-video.mp4' },
+      { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350750/WhatsApp_Image_2025-10-13_at_12.55.04_16d8a42c_ysupy2.jpg' },
+      { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350868/WhatsApp_Image_2025-10-13_at_12.55.07_e2b5cc01_lnjg46.jpg' },
+      { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350752/WhatsApp_Image_2025-10-13_at_12.55.03_717c9630_qfgjlx.jpg' },
     ],
   },
   'africa\'s-2nd-deepest-lake': {
     title: 'Africa\'s 2nd Deepest Lake',
     description: 'Dive into the extraordinary depths of Lake Bunyonyi, Africa\'s second deepest lake with depths ranging from 44 to an astounding 900 meters. Formed by ancient Virunga volcanic activity, these crystal-clear waters offer safe swimming experiences in designated areas. Feel the unique sensation of floating above geological wonders while surrounded by the pristine mountain landscape of southwestern Uganda.',
     media: [
-      { type: 'image', src: '/images/highlights/sp-1.jpg' },
-      { type: 'image', src: '/images/activities/wb-4.png' },
-      { type: 'image', src: '/images/highlights/sb-1.jpg' },
-      { type: 'video', src: '/videos/hero-video.mp4' },
+      { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362018/new-7_p0ieul.mp4' },
+      { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350750/WhatsApp_Image_2025-10-13_at_12.55.04_16d8a42c_ysupy2.jpg' },
     ],
   },
   'virunga-mountain-views': {
     title: 'Virunga Mountain Views',
     description: 'Wake up to breathtaking panoramic views of the legendary Virunga Mountains, the volcanic range that gave birth to Lake Bunyonyi and home to the endangered mountain gorillas. These ancient peaks tell the story of geological forces that shaped this landscape millions of years ago, creating the dramatic backdrop that makes every sunrise and sunset an unforgettable spectacle of natural artistry.',
     media: [
-      { type: 'image', src: '/images/highlights/zl-2.jpg' },
-      { type: 'image', src: '/images/highlights/rm-1.jpg' },
-      { type: 'image', src: '/images/highlights/dinner-4.png' },
-      { type: 'video', src: '/videos/hero-video.mp4' },
+      { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362046/new-13_nyazfc.mp4' },
+      { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760362203/new-1_isri7b.jpg' },
+      { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350752/WhatsApp_Image_2025-10-13_at_12.55.02_da3ad904_g37ouc.jpg' },
     ],
   },
   'luxury-lakefront-suites': {
