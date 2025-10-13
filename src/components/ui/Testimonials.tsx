@@ -6,19 +6,19 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const testimonials = [
   {
-    quote: 'An unforgettable experience! The views were breathtaking and the service was impeccable.',
+    quote: 'Lake Bunyonyi has become my home away from home. As a local guide, I\'ve witnessed how this magical place transforms visitors from around the world. The resort\'s commitment to preserving our cultural heritage while providing world-class hospitality is inspiring. The traditional canoeing experiences I lead connect guests with our Bakiga ancestors\' wisdom. The Grey Crowned Crane sightings and the mystical stories of the 29 islands create unforgettable memories that guests carry back to their countries.',
     author: 'Wilson Ecaat',
     country: 'Uganda',
   },
   {
-    quote: 'The perfect getaway. We will definitely be back!',
+    quote: 'The sustainable tourism approach here sets a benchmark for East Africa. Coming from Kenya, I was impressed by how the resort integrates local communities into tourism. The farm-to-table dining featuring fresh tilapia from the lake and organic vegetables from nearby gardens is exceptional. The cultural exchange programs where guests learn traditional Ugandan dances and crafts create meaningful connections. The Virunga Mountain views and volcanic lake formation stories make every visit educational and awe-inspiring.',
     author: 'Owora Pius',
-    country: 'Uganda',
+    country: 'Kenya',
   },
   {
-    quote: 'A truly luxurious resort. Every detail was perfect.',
+    quote: 'The biodiversity of Lake Bunyonyi rivals anything I\'ve seen in Ethiopia\'s national parks. The 29 islands, each with unique ecosystems and historical significance, create a natural laboratory for conservation. The resort\'s birdwatching safaris, where we spot over 200 species including the rare Papyrus Gonolek, are world-class. The geological wonders - lava flows that formed this deepest lake in East Africa - fascinate scientists and nature lovers alike. The authentic cultural immersion through community visits and traditional ceremonies makes this destination truly special.',
     author: 'E.L Mari',
-    country: 'Uganda',
+    country: 'Ethiopia',
   },
   {
     quote: 'Our family vacation at Lake Bunyonyi was magical. The kids loved the water bicycle tours and we all enjoyed the traditional canoeing experience. The resort staff went above and beyond to make our stay special, even organizing a private birdwatching session where we saw the Grey Crowned Cranes up close. The lakefront suites provided stunning sunrise views every morning.',
