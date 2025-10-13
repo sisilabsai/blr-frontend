@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FaVideo } from 'react-icons/fa';
 
 interface Activity {
   id: number;
@@ -10,7 +11,8 @@ interface Activity {
   description: string;
   category: string;
   price: number;
-  image: string;
+  media: string;
+  type: 'image' | 'video';
 }
 
 const ActivitiesPage = () => {
@@ -21,7 +23,8 @@ const ActivitiesPage = () => {
       description: "Explore the 29 mystical islands of Lake Bunyonyi, including historic Bwama Island and the legendary Punishment Island. Discover stories of Scottish missionaries, traditional justice, and island communities.",
       category: "Adventure",
       price: 85,
-      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311656/lunch_t2mw8t.png"
+      media: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760361830/new-2_hnmuni.jpg",
+      type: "image"
     },
     {
       id: 2,
@@ -29,7 +32,8 @@ const ActivitiesPage = () => {
       description: "Experience the thrill of high-speed boating across Lake Bunyonyi's crystal-clear waters. Feel the wind as you race between islands with stunning mountain views.",
       category: "Adventure",
       price: 95,
-      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311637/sb-1_ok9hhd.jpg"
+      media: "https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362065/new-12_moa0dl.mp4",
+      type: "video"
     },
     {
       id: 3,
@@ -37,7 +41,8 @@ const ActivitiesPage = () => {
       description: "Pedal across Lake Bunyonyi's pristine waters on our unique water bicycles. A fun, eco-friendly way to explore the lake while enjoying panoramic views of all 29 islands.",
       category: "Family",
       price: 45,
-      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311724/wb-6_c3ovi4.png"
+      media: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311724/wb-6_c3ovi4.png",
+      type: "image"
     },
     {
       id: 4,
@@ -45,7 +50,8 @@ const ActivitiesPage = () => {
       description: "Soar above the pristine waters on our thrilling zip line course, offering panoramic views of all 29 islands and the Virunga Mountains where mountain gorillas roam.",
       category: "Adventure",
       price: 75,
-      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311707/zl-2_fg9lvt.jpg"
+      media: "https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362046/new-13_nyazfc.mp4",
+      type: "video"
     },
     {
       id: 5,
@@ -53,7 +59,8 @@ const ActivitiesPage = () => {
       description: "Relax in our infinity swimming pool overlooking Lake Bunyonyi. Enjoy poolside service, stunning lake views, and the tranquil atmosphere of Africa's Switzerland.",
       category: "Relaxation",
       price: 35,
-      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311656/swimming-pool_mpihka.jpg"
+      media: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311656/swimming-pool_mpihka.jpg",
+      type: "image"
     },
     {
       id: 6,
@@ -61,7 +68,8 @@ const ActivitiesPage = () => {
       description: "Start your day with our signature breakfast featuring local Ugandan coffee, fresh tropical fruits, and international cuisine served with breathtaking lake views.",
       category: "Family",
       price: 25,
-      image: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311640/dinner-5_ftasf7.png"
+      media: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350860/WhatsApp_Image_2025-10-13_at_12.55.06_e379e919_biv8n4.jpg",
+      type: "image"
     },
     {
       id: 7,
@@ -69,7 +77,8 @@ const ActivitiesPage = () => {
       description: "Paddle through the crystal-clear waters of Africa's second deepest lake in traditional dugout canoes. Learn ancient fishing techniques while enjoying breathtaking mountain views.",
       category: "Adventure",
       price: 35,
-      image: "/images/canoeing.jpg"
+      media: "https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362095/new-11_rvlmvk.mp4",
+      type: "video"
     },
     {
       id: 8,
@@ -77,7 +86,8 @@ const ActivitiesPage = () => {
       description: "Observe the magnificent Grey Crowned Crane, Pied Kingfisher, Malachite Kingfisher, Papyrus Gonolek, and Great Cormorant in their natural habitat around Africa's bird conference tree.",
       category: "Family",
       price: 45,
-      image: "/images/birdwatching.jpg"
+      media: "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350868/WhatsApp_Image_2025-10-13_at_12.55.07_e2b5cc01_lnjg46.jpg",
+      type: "image"
     }
   ]);
   const [filter, setFilter] = useState('All');
@@ -175,18 +185,45 @@ const ActivitiesPage = () => {
           </button>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-          {filteredActivities.map((activity) => (
+          {filteredActivities.map((activity, index) => (
             <motion.div
               key={activity.id}
               className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-white/50 hover:shadow-3xl hover:-translate-y-2 transition-all duration-500"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
             >
               <div className="relative h-48 md:h-64 w-full overflow-hidden">
-                <Image src={activity.image} alt={activity.name} fill className="object-cover transition-transform duration-500 hover:scale-110" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                {activity.type === 'video' ? (
+                  <video
+                    src={activity.media}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                ) : (
+                  <Image
+                    src={activity.media}
+                    alt={activity.name}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                {activity.type === 'video' && (
+                  <motion.div
+                    className="absolute top-4 right-4 bg-black/50 rounded-full p-2"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+                  >
+                    <FaVideo className="w-4 h-4 text-white" />
+                  </motion.div>
+                )}
               </div>
               <div className="p-4 md:p-6">
                 <h2 className="text-lg md:text-2xl font-bold mb-2 font-playfair-display bg-gradient-to-r from-emerald-700 to-blue-700 bg-clip-text text-transparent">{activity.name}</h2>

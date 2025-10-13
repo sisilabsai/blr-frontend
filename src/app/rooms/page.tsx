@@ -15,9 +15,9 @@ const RoomsPage = () => {
       price: 100,
       capacity: 2,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg", 
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311629/rm-5_fuaxjl.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
@@ -29,9 +29,9 @@ const RoomsPage = () => {
       price: 200,
       capacity: 2,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311629/rm-5_fuaxjl.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311628/rm-6_v3fvv4.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
@@ -43,9 +43,9 @@ const RoomsPage = () => {
       price: 280,
       capacity: 2,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311628/rm-6_v3fvv4.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-3_tafmi5.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
@@ -57,9 +57,9 @@ const RoomsPage = () => {
       price: 350,
       capacity: 4,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311628/rm-6_v3fvv4.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-3_tafmi5.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-4_ypxdsz.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
@@ -71,9 +71,9 @@ const RoomsPage = () => {
       price: 320,
       capacity: 3,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-4_ypxdsz.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-1_klz0kf.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
@@ -85,9 +85,9 @@ const RoomsPage = () => {
       price: 450,
       capacity: 6,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-4_ypxdsz.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-1_klz0kf.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-2_hzguyc.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
@@ -99,9 +99,9 @@ const RoomsPage = () => {
       price: 500,
       capacity: 2,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-2_hzguyc.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-5_qdfmye.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
@@ -113,9 +113,9 @@ const RoomsPage = () => {
       price: 550,
       capacity: 3,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-5_qdfmye.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311628/rm-6_v3fvv4.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
@@ -127,9 +127,9 @@ const RoomsPage = () => {
       price: 1200,
       capacity: 8,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311631/rm-7_unmv2b.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-1_klz0kf.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
@@ -141,9 +141,9 @@ const RoomsPage = () => {
       price: 2000,
       capacity: 6,
       gallery_links: [
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311634/rm-8_ccsiez.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-3_tafmi5.jpg",
-        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1758311625/rm-4_ypxdsz.jpg"
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760366565/rooms_cpkut1.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350862/WhatsApp_Image_2025-10-13_at_12.55.08_aa49b099_jbjiae.jpg",
+        "https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350861/WhatsApp_Image_2025-10-13_at_12.55.07_4fa6b76f_tjtno6.jpg"
       ],
       created_at: "2025-09-19 21:15:54",
       updated_at: "2025-09-19 21:15:54"
