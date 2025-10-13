@@ -1,8 +1,10 @@
 'use client';
 
+
 import { motion, AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react';
 import VideoPlayer from './VideoPlayer';
+import { FaVideo, FaImage } from 'react-icons/fa';
 
 interface Media {
   type: 'image' | 'video';
@@ -22,11 +24,8 @@ const MediaGallery = ({ media }: MediaGalleryProps) => {
         {media.map((item, index) => (
           <motion.div
             key={index}
-            className="cursor-pointer z-10"
-            onClick={() => {
-              console.log('clicked', index);
-              setSelected(index);
-            }}
+            className="relative cursor-pointer z-10 group"
+            onClick={() => setSelected(index)}
             layoutId={`media-${index}`}
           >
             {item.type === 'image' ? (
@@ -34,6 +33,14 @@ const MediaGallery = ({ media }: MediaGalleryProps) => {
             ) : (
               <video src={item.src} className="w-full h-full object-cover rounded-lg" />
             )}
+            {/* Type Icon Overlay */}
+            <div className="absolute bottom-2 right-2 bg-black/70 rounded-full p-1 flex items-center justify-center">
+              {item.type === 'video' ? (
+                <FaVideo className="text-white w-4 h-4" title="Video" />
+              ) : (
+                <FaImage className="text-white w-4 h-4" title="Image" />
+              )}
+            </div>
           </motion.div>
         ))}
       </div>
