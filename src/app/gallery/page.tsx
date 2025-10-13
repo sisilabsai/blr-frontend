@@ -4,6 +4,7 @@
 import MediaGallery from '../../components/ui/MediaGallery';
 
 const media: { type: "video" | "image"; src: string }[] = [
+  // Existing media
   { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760351225/WhatsApp_Video_2025-10-13_at_12.55.02_60c5376b_ewmy3l.mp4' },
   { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760351082/WhatsApp_Video_2025-10-13_at_12.55.09_958f95fc_qdkgwj.mp4' },
   { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760351225/WhatsApp_Video_2025-10-13_at_12.55.02_60c5376b_ewmy3l.mp4' },
@@ -27,6 +28,22 @@ const media: { type: "video" | "image"; src: string }[] = [
   { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350859/WhatsApp_Image_2025-10-13_at_12.55.06_be76108c_cnmwov.jpg' },
   { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350756/WhatsApp_Image_2025-10-13_at_12.55.05_7ae8a645_wx87mj.jpg' },
   { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760350757/WhatsApp_Image_2025-10-13_at_12.55.04_480aa57c_nqfwxv.jpg' },
+
+  // New media
+  { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760361830/new-2_hnmuni.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760361833/new-4_piblee.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760361833/new-3_grkllb.jpg' },
+  { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760361862/new-5_ncs08s.mp4' },
+  { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760361881/new-6_mfzrpz.mp4' },
+  { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760361881/new-6_mfzrpz.mp4' },
+  { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760361956/new-8_fozezj.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760361959/new-10_vzhtsm.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760361960/new-9_mschas.jpg' },
+  { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362018/new-7_p0ieul.mp4' },
+  { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362046/new-13_nyazfc.mp4' },
+  { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362065/new-12_moa0dl.mp4' },
+  { type: 'video', src: 'https://res.cloudinary.com/dc0uiujvn/video/upload/v1760362095/new-11_rvlmvk.mp4' },
+  { type: 'image', src: 'https://res.cloudinary.com/dc0uiujvn/image/upload/v1760362203/new-1_isri7b.jpg' },
 ];
 
 const GalleryPage = () => (
