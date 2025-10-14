@@ -72,19 +72,71 @@ const Hero = () => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0, textShadow: ['0px 0px 0px rgba(255,215,0,0)', '0px 0px 20px rgba(255,215,0,0.6)', '0px 0px 0px rgba(255,215,0,0)'] }}
+          animate={{ opacity: 1, y: 0, textShadow: ['0px 0px 0px rgba(255,215,0,0)', '0px 0px 22px rgba(255,215,0,0.6)', '0px 0px 0px rgba(255,215,0,0)'] }}
           transition={{ duration: 0.8, delay: 0.2, textShadow: { duration: 4, repeat: Infinity, ease: 'easeInOut' } }}
-          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-8xl font-playfair-display font-bold drop-shadow-lg text-center px-4 leading-tight"
+          className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-8xl font-playfair-display font-bold drop-shadow-lg text-center px-4 leading-tight relative"
         >
-          Welcome to <TypeAnimation sequence={['', 500, 'Bunyonyi Luxury Resort', 2000]} wrapper="span" className="bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-400 bg-clip-text text-transparent" cursor={true} repeat={Infinity} />
+          <span className="inline-block">Welcome to</span>
+          <div className="mt-2">
+            <TypeAnimation
+              sequence={[500, 'Bunyonyi Luxury Resort']}
+              wrapper="span"
+              className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-400 font-playfair-display"
+              cursor={true}
+              speed={60}
+              repeat={Infinity}
+            />
+
+            {/* Animated underline SVG */}
+            <svg viewBox="0 0 300 30" className="w-64 h-6 mt-1 mx-auto block" preserveAspectRatio="xMidYMid meet">
+              <path d="M10 20 C60 0, 240 40, 290 20" fill="transparent" stroke="url(#g)" strokeWidth="3" strokeLinecap="round">
+                <animate attributeName="stroke-dasharray" from="0,300" to="300,0" dur="2.2s" begin="0.6s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0;1;0.6;1;0" dur="4s" begin="0.6s" repeatCount="indefinite" />
+              </path>
+              <defs>
+                <linearGradient id="g" x1="0%" x2="100%">
+                  <stop offset="0%" stopColor="#FFD166" />
+                  <stop offset="50%" stopColor="#60A5FA" />
+                  <stop offset="100%" stopColor="#34D399" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            {/* Sparkles around title */}
+            <motion.div
+              aria-hidden
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0], scale: [0.8, 1.2, 0.8], rotate: [0, 45, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              className="pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 flex gap-2"
+            >
+              <span className="w-2 h-2 bg-amber-300 rounded-full blur-sm" />
+              <span className="w-1.5 h-1.5 bg-white rounded-full" />
+              <span className="w-2 h-2 bg-emerald-300 rounded-full blur-sm" />
+            </motion.div>
+          </div>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-3 md:mt-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-inter drop-shadow text-center px-4 max-w-4xl"
+          className="mt-3 md:mt-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-inter drop-shadow text-center px-4 max-w-4xl relative"
         >
-          <TypeAnimation sequence={['', 1500, "Discover Africa's second deepest lake - where volcanic legends meet luxury on the shores of the mystical Lake Bunyonyi", 4000]} wrapper="span" cursor={false} speed={60} />
+          <TypeAnimation
+            sequence={[1500, "Discover Africa's second deepest lake - where volcanic legends meet luxury on the shores of the mystical Lake Bunyonyi"]}
+            wrapper="span"
+            cursor={false}
+            speed={45}
+          />
+
+          {/* Subtle highlight that sweeps under subtitle */}
+          <motion.span
+            aria-hidden
+            className="absolute left-1/2 -bottom-3 w-60 h-2 rounded-full bg-gradient-to-r from-amber-300/40 via-blue-400/30 to-emerald-300/30 blur-xl"
+            initial={{ x: '-50%', opacity: 0 }}
+            animate={{ x: ['-60%', '-50%', '-40%'], opacity: [0, 0.7, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+          />
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -94,19 +146,25 @@ const Hero = () => {
         >
           <motion.a
             href="/booking"
-            animate={{ boxShadow: ['0px 0px 0px rgba(255,215,0,0)', '0px 0px 15px rgba(255,215,0,0.7)', '0px 0px 0px rgba(255,215,0,0)'] }}
-            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-amber-500 text-white font-semibold rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-amber-300 text-center text-sm md:text-base"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.98 }}
+            className="relative overflow-hidden w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-amber-500 text-white font-semibold rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform focus:outline-none focus:ring-4 focus:ring-amber-300 text-center text-sm md:text-base"
+            aria-label="Book your stay"
           >
-            Book Your Stay
+            {/* glowing pulse */}
+            <span className="absolute inset-0 rounded-full bg-amber-400/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <span className="relative">Book Your Stay</span>
+            {/* ripple on click - will be handled by :active pseudo for now */}
           </motion.a>
+
           <motion.a
             href="/activities"
-            animate={{ boxShadow: ['0px 0px 0px rgba(255,255,255,0)', '0px 0px 15px rgba(255,255,255,0.5)', '0px 0px 0px rgba(255,255,255,0)'] }}
-            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-white text-center text-sm md:text-base"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.98 }}
+            className="relative overflow-hidden w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300 transform focus:outline-none focus:ring-4 focus:ring-white text-center text-sm md:text-base"
+            aria-label="Explore experiences"
           >
-            Explore Experiences
+            <span className="relative">Explore Experiences</span>
           </motion.a>
         </motion.div>
       </div>
