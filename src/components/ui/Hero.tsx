@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useRef } from 'react';
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -51,6 +52,11 @@ const Hero = () => {
           animate={{ y: [0, 10, 0], x: [0, -10, 0] }}
           transition={{ duration: 6, repeat: Infinity }}
         />
+        <motion.div
+          className="absolute right-1/3 bottom-1/3 w-20 h-20 rounded-full bg-purple-400/30 blur-2xl animate-float-medium"
+          animate={{ y: [0, -12, 0], x: [0, 8, 0] }}
+          transition={{ duration: 7, repeat: Infinity }}
+        />
       </motion.div>
       {/* Hero content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
@@ -60,7 +66,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-8xl font-playfair-display font-bold drop-shadow-lg text-center px-4 leading-tight"
         >
-          Welcome to <span className="bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-400 bg-clip-text text-transparent">Bunyonyi Luxury Resort</span>
+          Welcome to <TypeAnimation sequence={['', 500, 'Bunyonyi Luxury Resort', 2000]} wrapper="span" className="bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-400 bg-clip-text text-transparent" cursor={true} repeat={Infinity} />
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
