@@ -189,6 +189,8 @@ const Testimonials = () => {
             align: 'start',
             loop: true,
           }}
+          autoplay={5000}
+          pauseOnHover
           className="w-full max-w-4xl mx-auto"
         >
           <CarouselContent>

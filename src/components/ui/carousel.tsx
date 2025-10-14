@@ -19,6 +19,9 @@ type CarouselProps = {
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
+  autoplay?: number | boolean
+  pauseOnHover?: boolean
+  pauseOnInteraction?: boolean
 }
 
 type CarouselContextProps = {
@@ -49,6 +52,9 @@ function Carousel({
   plugins,
   className,
   children,
+  autoplay,
+  pauseOnHover = true,
+  pauseOnInteraction = true,
   ...props
 }: React.ComponentProps<"div"> & CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(
@@ -74,6 +80,19 @@ function Carousel({
   const scrollNext = React.useCallback(() => {
     api?.scrollNext()
   }, [api])
+
+  // paused state to control autoplay
+  const pauseRef = React.useRef(false)
+  const pauseTimeout = React.useRef<number | null>(null)
+
+  const setPausedTemporarily = React.useCallback((ms = 6000) => {
+    if (!pauseOnInteraction) return
+    pauseRef.current = true
+    if (pauseTimeout.current) window.clearTimeout(pauseTimeout.current)
+    pauseTimeout.current = window.setTimeout(() => {
+      pauseRef.current = false
+    }, ms)
+  }, [pauseOnInteraction])
 
   const handleKeyDown = React.useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -104,6 +123,52 @@ function Carousel({
     }
   }, [api, onSelect])
 
+  // autoplay effect
+  React.useEffect(() => {
+    if (!api) return
+    const enabled = typeof autoplay === 'number' ? autoplay > 0 : !!autoplay
+    if (!enabled) return
+
+    const intervalMs = typeof autoplay === 'number' ? autoplay : 5000
+
+    let rafId: number | null = null
+    const tick = () => {
+      if (!api) return
+      if (pauseRef.current) {
+        // skip
+      } else {
+        try {
+          api.scrollNext()
+        } catch (e) {
+          // ignore
+        }
+      }
+      rafId = window.setTimeout(tick, intervalMs) as unknown as number
+    }
+
+    // start
+    rafId = window.setTimeout(tick, intervalMs) as unknown as number
+
+    return () => {
+      if (rafId) window.clearTimeout(rafId)
+      if (pauseTimeout.current) window.clearTimeout(pauseTimeout.current)
+    }
+  }, [api, autoplay])
+
+  // attach user interaction handlers to pause autoplay
+  React.useEffect(() => {
+    if (!api || !pauseOnInteraction) return
+    const onPointerDown = () => setPausedTemporarily()
+    api.on('pointerDown', onPointerDown)
+    return () => {
+      try {
+        api.off('pointerDown', onPointerDown)
+      } catch (e) {
+        // ignore
+      }
+    }
+  }, [api, pauseOnInteraction, setPausedTemporarily])
+
   return (
     <CarouselContext.Provider
       value={{
@@ -120,6 +185,12 @@ function Carousel({
     >
       <div
         onKeyDownCapture={handleKeyDown}
+        onMouseEnter={() => {
+          if (pauseOnHover) pauseRef.current = true
+        }}
+        onMouseLeave={() => {
+          if (pauseOnHover) pauseRef.current = false
+        }}
         className={cn("relative", className)}
         role="region"
         aria-roledescription="carousel"
