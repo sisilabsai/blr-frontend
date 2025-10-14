@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
+import { ZoomIn, ZoomOut, RefreshCw, MapPin } from 'lucide-react'
 
 const islands = [
   // Major Named Islands
@@ -57,6 +58,25 @@ const LakeMap = () => {
   const [clusters, setClusters] = useState<Cluster[] | null>(null)
   const [expandedCluster, setExpandedCluster] = useState<string | null>(null)
 
+  // pan/zoom state
+  const [zoom, setZoom] = useState<number>(1)
+  const [offset, setOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
+  const panRef = useRef({ dragging: false, startX: 0, startY: 0, startOffsetX: 0, startOffsetY: 0 })
+
+  const zoomTo = (centerX: number, centerY: number, targetZoom = 2) => {
+    const vbW = 800
+    const vbH = 600
+    const newOffsetX = -(centerX * targetZoom - vbW / 2)
+    const newOffsetY = -(centerY * targetZoom - vbH / 2)
+    setZoom(targetZoom)
+    setOffset({ x: newOffsetX, y: newOffsetY })
+  }
+
+  const resetView = () => {
+    setZoom(1)
+    setOffset({ x: 0, y: 0 })
+  }
+
   useEffect(() => {
     setIsTouch(typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0));
     // intentionally lightweight: just detect touch-capable devices
@@ -76,19 +96,19 @@ const LakeMap = () => {
       const thresholdPx = 40 // cluster items closer than ~40px
       const threshold = thresholdPx * scale
 
-      const positions = islands.map((it) => {
+      const positions: Position[] = islands.map((it) => {
         const px = parseFloat(it.x as string) || 0
         const py = parseFloat(it.y as string) || 0
-        return { ...it, x: (px / 100) * 800, y: (py / 100) * 600 }
+        return { id: it.id, name: it.name, x: (px / 100) * 800, y: (py / 100) * 600 }
       })
 
-  const used = new Set<string>()
-  const out: Cluster[] = []
+      const used = new Set<string>()
+      const out: Cluster[] = []
 
       for (let i = 0; i < positions.length; i++) {
         const a = positions[i]
         if (used.has(a.id)) continue
-        const clusterItems = [a]
+        const clusterItems: Position[] = [a]
         used.add(a.id)
         for (let j = i + 1; j < positions.length; j++) {
           const b = positions[j]
@@ -103,14 +123,14 @@ const LakeMap = () => {
         }
 
         if (clusterItems.length > 1) {
-          // compute centroid
           const cx = clusterItems.reduce((s, it) => s + it.x, 0) / clusterItems.length
           const cy = clusterItems.reduce((s, it) => s + it.y, 0) / clusterItems.length
           out.push({ type: 'cluster', x: cx, y: cy, items: clusterItems })
         } else {
           const it = clusterItems[0]
-          const isMajor = islands.findIndex((id) => id.id === it.id) < 10
-          const isSmall = islands.findIndex((id) => id.id === it.id) > 20
+          const idx = islands.findIndex((ii) => ii.id === it.id)
+          const isMajor = idx >= 0 && idx < 10
+          const isSmall = idx > 20
           const r = isMajor ? 7 : isSmall ? 3.5 : 5
           out.push({ type: 'single', item: it, x: it.x, y: it.y, r })
         }
@@ -123,6 +143,53 @@ const LakeMap = () => {
     window.addEventListener('resize', compute)
     return () => window.removeEventListener('resize', compute)
   }, [])
+
+  // handle wheel zoom
+  useEffect(() => {
+    const el = svgRef.current
+    if (!el) return
+    const onWheel = (e: WheelEvent) => {
+      if (e.ctrlKey) return
+      e.preventDefault()
+      const delta = -e.deltaY
+      const factor = delta > 0 ? 1.1 : 0.9
+      setZoom((z) => Math.min(4, Math.max(0.5, z * factor)))
+    }
+    el.addEventListener('wheel', onWheel, { passive: false })
+    return () => el.removeEventListener('wheel', onWheel)
+  }, [svgRef.current])
+
+  // pointer drag for pan
+  useEffect(() => {
+    const el = svgRef.current
+    if (!el) return
+    const onPointerDown = (e: PointerEvent) => {
+      panRef.current.dragging = true
+      panRef.current.startX = e.clientX
+      panRef.current.startY = e.clientY
+      panRef.current.startOffsetX = offset.x
+      panRef.current.startOffsetY = offset.y
+      el.setPointerCapture?.(e.pointerId)
+    }
+    const onPointerMove = (e: PointerEvent) => {
+      if (!panRef.current.dragging) return
+      const dx = e.clientX - panRef.current.startX
+      const dy = e.clientY - panRef.current.startY
+      setOffset({ x: panRef.current.startOffsetX + dx / zoom, y: panRef.current.startOffsetY + dy / zoom })
+    }
+    const onPointerUp = (e: PointerEvent) => {
+      panRef.current.dragging = false
+      try { el.releasePointerCapture?.(e.pointerId) } catch {}
+    }
+    el.addEventListener('pointerdown', onPointerDown)
+    window.addEventListener('pointermove', onPointerMove)
+    window.addEventListener('pointerup', onPointerUp)
+    return () => {
+      el.removeEventListener('pointerdown', onPointerDown)
+      window.removeEventListener('pointermove', onPointerMove)
+      window.removeEventListener('pointerup', onPointerUp)
+    }
+  }, [svgRef.current, offset, zoom])
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-emerald-50 relative overflow-hidden">
@@ -151,8 +218,19 @@ const LakeMap = () => {
           Navigate 29 legendary islands formed by ancient Virunga lava flows, fed by River Kagoma from Kigezi Highlands and drained by River Heissesero - Africa&apos;s second deepest lake awaits your exploration
         </motion.p>
         <div className="relative">
+          <div className="absolute top-3 right-3 z-30 flex items-center gap-2">
+            <button aria-label="Zoom in" onClick={() => setZoom((z) => Math.min(4, z * 1.2))} className="bg-white/90 p-2 rounded shadow" title="Zoom in">
+              <ZoomIn size={16} />
+            </button>
+            <button aria-label="Zoom out" onClick={() => setZoom((z) => Math.max(0.5, z / 1.2))} className="bg-white/90 p-2 rounded shadow" title="Zoom out">
+              <ZoomOut size={16} />
+            </button>
+            <button aria-label="Reset view" onClick={resetView} className="bg-white/90 p-2 rounded shadow" title="Reset view">
+              <RefreshCw size={16} />
+            </button>
+          </div>
           {/* SVG inline map for crisp scaling and precise marker placement */}
-          <svg viewBox="0 0 800 600" className="w-full h-auto block">
+          <svg ref={svgRef} viewBox="0 0 800 600" className="w-full h-auto block">
             <defs>
               <linearGradient id="islandGrad" x1="0" x2="1">
                 <stop offset="0%" stopColor="#FFDD7A" stopOpacity="1" />
@@ -162,27 +240,21 @@ const LakeMap = () => {
                 <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.15" />
               </filter>
             </defs>
-            <rect width="800" height="600" fill="#aadaff" />
-            <text x="50%" y="50%" fontSize="48" textAnchor="middle" dy=".3em" fill="#0f172a">Lake Bunyonyi Map</text>
+            <g id="viewport" transform={`translate(${offset.x}, ${offset.y}) scale(${zoom})`}>
+              <rect width="800" height="600" fill="#aadaff" />
+              <text x="50%" y="50%" fontSize="48" textAnchor="middle" dy=".3em" fill="#0f172a">Lake Bunyonyi Map</text>
 
-            {/* Islands rendered in SVG coordinates (viewBox units) */}
-            {/* clustering: compute clusters on small viewports */}
-            {clusters ? (
+              {/* Islands rendered in SVG coordinates (viewBox units) */}
+              {/* clustering: compute clusters on small viewports */}
+              {clusters ? (
               clusters.map((c, ci) => {
                 if (c.type === 'cluster') {
                   const { x, y, items } = c
                   return (
-                    <g key={`cluster-${ci}`} transform={`translate(${x}, ${y})`} onClick={() => setExpandedCluster(expandedCluster === `cluster-${ci}` ? null : `cluster-${ci}`)} role="button" tabIndex={0} aria-label={`Cluster with ${items.length} islands`}>
+                    <g key={`cluster-${ci}`} transform={`translate(${x}, ${y})`} onClick={() => zoomTo(x, y, 2)} role="button" tabIndex={0} aria-label={`Cluster with ${items.length} islands`}>
                       <circle r={12} fill="#FFB86B" stroke="#fff" strokeWidth={1.5} filter="url(#shadow)" />
                       <text x={0} y={4} textAnchor="middle" fontSize={10} fill="#0f172a">{items.length}</text>
-                      {expandedCluster === `cluster-${ci}` && (
-                        <g transform={`translate(0, -28)`}>
-                          <rect x={-60} y={-20} rx={6} ry={6} width={120} height={20 + items.length * 18} fill="rgba(255,255,255,0.98)" stroke="rgba(255,255,255,0.9)" />
-                          {items.map((it: Position, idx: number) => (
-                            <text key={it.id} x={0} y={-4 + idx * 18} textAnchor="middle" fontSize={10} fill="#0f172a">{it.name}</text>
-                          ))}
-                        </g>
-                      )}
+                      {/* expandedCluster UI replaced by zoom-to behavior */}
                     </g>
                   )
                 }
@@ -229,6 +301,7 @@ const LakeMap = () => {
                 )
               })
             )}
+            </g>
           </svg>
           {/* ring animation styles (SVG) */}
           <style>{`
@@ -239,6 +312,36 @@ const LakeMap = () => {
             svg g[tabindex] { outline: none; }
             svg g[tabindex]:focus circle { transform: scale(1.25); }
           `}</style>
+        </div>
+        {/* minimap overview */}
+        <div className="absolute bottom-4 right-4 z-40">
+          <svg viewBox="0 0 200 150" width="200" height="150" className="rounded-lg shadow-lg bg-white/60" onClick={(e) => {
+            // click-to-center: compute relative click in minimap and map to viewBox coords
+            const rect = (e.target as SVGElement).getBoundingClientRect()
+            const cx = e.clientX - rect.left
+            const cy = e.clientY - rect.top
+            const mapX = (cx / rect.width) * 800
+            const mapY = (cy / rect.height) * 600
+            zoomTo(mapX, mapY, Math.min(3, zoom * 1.5))
+          }}>
+            <rect width="200" height="150" fill="#aadaff" rx="6" />
+            {/* islands as dots */}
+            {islands.map((it) => {
+              const px = parseFloat(it.x as string) || 0
+              const py = parseFloat(it.y as string) || 0
+              const mx = (px / 100) * 200
+              const my = (py / 100) * 150
+              return <circle key={it.id} cx={mx} cy={my} r={2} fill="#FF9A3C" />
+            })}
+            {/* viewport rect */}
+            {(() => {
+              const vw = 200 / zoom
+              const vh = 150 / zoom
+              const vx = -offset.x / zoom / 4 // scaled mapping because minimap is smaller; using simple mapping
+              const vy = -offset.y / zoom / 4
+              return <rect x={vx} y={vy} width={vw} height={vh} fill="none" stroke="#0f172a" strokeWidth={1.5} />
+            })()}
+          </svg>
         </div>
       </div>
     </section>
