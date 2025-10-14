@@ -5,6 +5,7 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
+import { Play, Pause } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -84,6 +85,7 @@ function Carousel({
   // paused state to control autoplay
   const pauseRef = React.useRef(false)
   const pauseTimeout = React.useRef<number | null>(null)
+  const [isManuallyPaused, setIsManuallyPaused] = React.useState(false)
 
   const setPausedTemporarily = React.useCallback((ms = 6000) => {
     if (!pauseOnInteraction) return
@@ -134,12 +136,12 @@ function Carousel({
     let rafId: number | null = null
     const tick = () => {
       if (!api) return
-      if (pauseRef.current) {
+      if (pauseRef.current || isManuallyPaused) {
         // skip
       } else {
         try {
           api.scrollNext()
-        } catch (e) {
+        } catch {
           // ignore
         }
       }
@@ -153,7 +155,21 @@ function Carousel({
       if (rafId) window.clearTimeout(rafId)
       if (pauseTimeout.current) window.clearTimeout(pauseTimeout.current)
     }
-  }, [api, autoplay])
+  }, [api, autoplay, isManuallyPaused])
+
+  const toggleManualPause = React.useCallback(() => {
+    setIsManuallyPaused((v) => {
+      const next = !v
+      if (!next) {
+        // resumed -> clear temporary pause so autoplay continues
+        pauseRef.current = false
+      } else {
+        // paused -> ensure pointer/timeouts won't immediately resume
+        pauseRef.current = true
+      }
+      return next
+    })
+  }, [])
 
   // attach user interaction handlers to pause autoplay
   React.useEffect(() => {
@@ -163,7 +179,7 @@ function Carousel({
     return () => {
       try {
         api.off('pointerDown', onPointerDown)
-      } catch (e) {
+      } catch {
         // ignore
       }
     }
@@ -198,6 +214,18 @@ function Carousel({
         {...props}
       >
         {children}
+        {/* autoplay play/pause control */}
+        {autoplay ? (
+          <button
+            aria-pressed={isManuallyPaused}
+            aria-label={isManuallyPaused ? "Resume autoplay" : "Pause autoplay"}
+            onClick={toggleManualPause}
+            className="absolute top-3 right-3 z-20 inline-flex items-center justify-center rounded-full bg-white/90 shadow-md p-2 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            {isManuallyPaused ? <Play size={16} /> : <Pause size={16} />}
+            <span className="sr-only">{isManuallyPaused ? 'Resume autoplay' : 'Pause autoplay'}</span>
+          </button>
+        ) : null}
       </div>
     </CarouselContext.Provider>
   )
