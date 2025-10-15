@@ -1,24 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
 
 export function Footer() {
-  const { t } = useTranslation('common');
   return (
     <footer className="bg-gradient-to-tr from-blue-900 via-emerald-700 to-amber-500 text-white py-8 md:py-12 mt-16 md:mt-24 shadow-inner">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
           <div className="text-center md:text-left md:col-span-1">
-            <h3 className="text-2xl md:text-3xl font-extrabold mb-3 font-playfair-display">{t('footer.title')}</h3>
+            <h3 className="text-2xl md:text-3xl font-extrabold mb-3 font-playfair-display">Bunyonyi Luxury Resort</h3>
             <p className="text-white/90 text-sm md:text-base max-w-xl leading-relaxed">
-              <span className="block md:hidden">{t('footer.description')}</span>
-              <span className="hidden md:block">{t('footer.fullDescription')}</span>
+              <span className="block md:hidden">Experience the tranquility of Lake Bunyonyi — private cottages, canoe trips, and local cuisine.</span>
+              <span className="hidden md:block">Bunyonyi Luxury Resort — an intimate lakeside retreat perched on the misty shores of Lake Bunyonyi. We blend refined comfort with nature-first experiences: private cottages with panoramic water views, guided cultural excursions, canoe trips between the tree-dotted islands, and sustainable farm-to-table dining. Come for the silence and return with stories.</span>
             </p>
           </div>
           <div className="text-center md:text-left md:col-span-1">
-            <h3 className="text-lg md:text-xl font-semibold mb-3">{t('navbar.contact')}</h3>
-            <p className="text-sm md:text-base text-white/90">{t('navbar.phone')}: <a className="underline" href="tel:+256390456789">+256 390 456 789</a></p>
-            <p className="text-sm md:text-base text-white/90">{t('navbar.email')}: <a className="underline" href="mailto:info@bunyonyiluxuryresort.com">info@bunyonyiluxuryresort.com</a></p>
+            <h3 className="text-lg md:text-xl font-semibold mb-3">Contact</h3>
+            <p className="text-sm md:text-base text-white/90">Phone: <a className="underline" href="tel:+256390456789">+256 390 456 789</a></p>
+            <p className="text-sm md:text-base text-white/90">Email: <a className="underline" href="mailto:info@bunyonyiluxuryresort.com">info@bunyonyiluxuryresort.com</a></p>
             <div className="mt-4 flex items-center justify-center md:justify-start gap-3">
               <a href="#" aria-label="Facebook" className="p-3 md:p-2 touch:active:scale-95 hover:text-amber-300 transition-colors duration-200 rounded-lg hover:bg-white/10">
                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
@@ -32,14 +30,14 @@ export function Footer() {
             </div>
           </div>
           <div className="md:col-span-1 text-center md:text-right">
-            <h3 className="text-sm md:text-base font-semibold mb-2">{t('footer.poweredBy')}</h3>
+            <h3 className="text-sm md:text-base font-semibold mb-2">Powered &amp; Developed by</h3>
             <p className="text-white/90 text-sm md:text-base"><a href="https://sisilabs.com" target="_blank" rel="noopener noreferrer" className="underline">Sisi Labs (U) Ltd</a></p>
-            <p className="text-white/80 text-xs mt-4">{t('footer.developedBy')} <a href="https://sisilabs.com" target="_blank" rel="noopener noreferrer" className="underline">Sisi Labs (U) Ltd</a>.</p>
+            <p className="text-white/80 text-xs mt-4">Sisi Labs builds thoughtful digital products with an emphasis on performance, accessibility and delightful UX. Learn more at <a href="https://sisilabs.com" target="_blank" rel="noopener noreferrer" className="underline">sisilabs.com</a>.</p>
           </div>
         </div>
         <div className="text-center mt-8 md:mt-12 text-white/80 text-sm md:text-base border-t border-white/20 pt-6 md:pt-8">
-          <p>{t('footer.copyright')}</p>
-          <p className="mt-2 text-xs text-white/70 md:hidden">{t('footer.developedBy')} <a href="https://sisilabs.com" target="_blank" rel="noopener noreferrer" className="underline">Sisi Labs (U) Ltd</a></p>
+          <p>&copy; 2025 Bunyonyi Luxury Resort. All rights reserved.</p>
+          <p className="mt-2 text-xs text-white/70 md:hidden">Powered &amp; developed by <a href="https://sisilabs.com" target="_blank" rel="noopener noreferrer" className="underline">Sisi Labs (U) Ltd</a></p>
         </div>
       </div>
     </footer>
