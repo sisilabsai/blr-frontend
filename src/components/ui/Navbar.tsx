@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import React, { useState, useRef, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -49,6 +50,9 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-2 md:gap-4">
+            <div className="mr-2">
+              <ThemeToggle />
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -162,6 +166,11 @@ const Navbar = () => {
                   Book Your Stay
                 </Link>
               </motion.div>
+
+                  {/* Theme toggle inside mobile menu */}
+                  <div className="mt-6 px-4">
+                    <ThemeToggle />
+                  </div>
 
               {/* Contact Info */}
               <motion.div
