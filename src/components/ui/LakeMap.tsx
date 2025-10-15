@@ -192,7 +192,7 @@ const LakeMap = () => {
   }, [svgRef.current, offset, zoom])
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-emerald-50 relative overflow-hidden">
+  <section aria-label="Interactive map of Lake Bunyonyi" role="region" className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-emerald-50 relative overflow-hidden">
       {/* Animated water ripples effect */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-10 md:top-20 left-1/4 w-32 md:w-64 h-32 md:h-64 bg-blue-300/30 rounded-full animate-ping" style={{ animationDuration: '4s' }} />
@@ -230,7 +230,8 @@ const LakeMap = () => {
             </button>
           </div>
           {/* SVG inline map for crisp scaling and precise marker placement */}
-          <svg ref={svgRef} viewBox="0 0 800 600" className="w-full h-auto block">
+          <svg ref={svgRef} viewBox="0 0 800 600" className="w-full h-auto block" role="img" aria-labelledby="lake-map-title">
+            <title id="lake-map-title">Lake Bunyonyi interactive map with islands</title>
             <defs>
               <linearGradient id="islandGrad" x1="0" x2="1">
                 <stop offset="0%" stopColor="#FFDD7A" stopOpacity="1" />
@@ -315,7 +316,12 @@ const LakeMap = () => {
         </div>
         {/* minimap overview */}
         <div className="absolute bottom-4 right-4 z-40">
-          <svg viewBox="0 0 200 150" width="200" height="150" className="rounded-lg shadow-lg bg-white/60" onClick={(e) => {
+          <svg viewBox="0 0 200 150" width="200" height="150" className="rounded-lg shadow-lg bg-white/60" role="img" aria-label="Minimap overview" tabIndex={0} onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              // center at mouse position is not available for keyboard; reset to center
+              zoomTo(400, 300, Math.min(3, zoom * 1.5))
+            }
+          }} onClick={(e) => {
             // click-to-center: compute relative click in minimap and map to viewBox coords
             const rect = (e.target as SVGElement).getBoundingClientRect()
             const cx = e.clientX - rect.left

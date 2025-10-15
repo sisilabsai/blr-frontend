@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -18,8 +18,23 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
+  const menuRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (!isOpen) return
+    // focus the first link inside the mobile menu for keyboard users
+    const first = menuRef.current?.querySelector<HTMLAnchorElement>('a')
+    first?.focus()
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [isOpen])
+
   return (
-    <nav className="backdrop-blur-lg bg-white/60 shadow-xl border-b border-white/30 fixed w-full z-[100] transition-all duration-300">
+    <nav aria-label="Primary" className="backdrop-blur-lg bg-white/60 shadow-xl border-b border-white/30 fixed w-full z-[100] transition-all duration-300">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -58,6 +73,8 @@ const Navbar = () => {
             onClick={toggleMenu}
             whileTap={{ scale: 0.95 }}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             <div className="w-6 h-6 relative">
               <motion.span
@@ -98,11 +115,16 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
+            ref={menuRef}
             className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white backdrop-blur-xl shadow-2xl md:hidden z-[70] border-l border-gray-200"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
+            role="dialog"
+            aria-modal="true"
+            onKeyDown={(e) => { if (e.key === 'Escape') setIsOpen(false) }}
           >
             <div className="flex flex-col h-full pt-24 px-6">
               {/* Navigation Links */}

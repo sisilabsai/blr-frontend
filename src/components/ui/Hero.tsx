@@ -24,6 +24,7 @@ const Hero = () => {
       <motion.div
         style={{ scale }}
         className="absolute inset-0"
+        aria-hidden="true"
       >
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
@@ -31,6 +32,7 @@ const Hero = () => {
           autoPlay
           loop
           muted
+          aria-hidden
         />
         {/* Animated gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-amber-400/30 via-blue-700/30 to-emerald-400/30 animate-gradient-move" />
@@ -150,6 +152,7 @@ const Hero = () => {
             whileTap={{ scale: 0.98 }}
             className="relative overflow-hidden w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-amber-500 text-white font-semibold rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform focus:outline-none focus:ring-4 focus:ring-amber-300 text-center text-sm md:text-base"
             aria-label="Book your stay"
+            role="button"
           >
             {/* glowing pulse */}
             <span className="absolute inset-0 rounded-full bg-amber-400/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -163,6 +166,7 @@ const Hero = () => {
             whileTap={{ scale: 0.98 }}
             className="relative overflow-hidden w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300 transform focus:outline-none focus:ring-4 focus:ring-white text-center text-sm md:text-base"
             aria-label="Explore experiences"
+            role="button"
           >
             <span className="relative">Explore Experiences</span>
           </motion.a>
