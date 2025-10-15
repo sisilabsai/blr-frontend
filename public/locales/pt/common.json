@@ -1,0 +1,27 @@
+{
+  "navbar": {
+    "home": "Início",
+    "rooms": "Quartos",
+    "activities": "Atividades",
+    "gallery": "Galeria",
+    "about": "Sobre",
+    "contact": "Contato",
+    "bookNow": "Reserve Agora",
+    "bookYourStay": "Reserve sua estadia",
+    "contactUs": "Entre em contato conosco",
+    "phone": "Telefone",
+    "email": "Email"
+  },
+  "footer": {
+    "title": "Bunyonyi Luxury Resort",
+    "description": "Experimente a tranquilidade do lago Bunyonyi — chalés privados, passeios de canoa e culinária local.",
+    "fullDescription": "Bunyonyi Luxury Resort — um retiro íntimo à beira do lago localizado nas margens enevoadas do lago Bunyonyi. Combinamos conforto refinado com experiências focadas na natureza: chalés privados com vistas panorâmicas da água, excursões culturais guiadas, passeios de canoa entre as ilhas arborizadas, e culinária sustentável da fazenda à mesa. Venha pelo silêncio e volte com histórias.",
+    "poweredBy": "Desenvolvido e desenvolvido por",
+    "copyright": "© 2025 Bunyonyi Luxury Resort. Todos os direitos reservados.",
+    "developedBy": "Desenvolvido e desenvolvido por"
+  },
+  "hero": {
+    "title": "Bem-vindo ao Bunyonyi Luxury Resort",
+    "subtitle": "Sua fuga serena aguarda"
+  }
+}

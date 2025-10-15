@@ -1,0 +1,27 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "rooms": "Zimmer",
+    "activities": "Aktivitäten",
+    "gallery": "Galerie",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "bookNow": "Jetzt buchen",
+    "bookYourStay": "Buchen Sie Ihren Aufenthalt",
+    "contactUs": "Kontaktieren Sie uns",
+    "phone": "Telefon",
+    "email": "E-Mail"
+  },
+  "footer": {
+    "title": "Bunyonyi Luxury Resort",
+    "description": "Erleben Sie die Ruhe des Bunyonyi-Sees — private Cottages, Kanu-Touren und lokale Küche.",
+    "fullDescription": "Bunyonyi Luxury Resort — ein intimer See-Rückzugsort, der auf den nebeligen Ufern des Bunyonyi-Sees liegt. Wir verbinden raffinierten Komfort mit naturzentrierten Erlebnissen: private Cottages mit Panoramablick auf das Wasser, geführte kulturelle Ausflüge, Kanu-Touren zwischen den baumbestandenen Inseln und nachhaltige Farm-to-Table-Küche. Kommen Sie für die Stille und kehren Sie mit Geschichten zurück.",
+    "poweredBy": "Unterstützt und entwickelt von",
+    "copyright": "© 2025 Bunyonyi Luxury Resort. Alle Rechte vorbehalten.",
+    "developedBy": "Unterstützt und entwickelt von"
+  },
+  "hero": {
+    "title": "Willkommen im Bunyonyi Luxury Resort",
+    "subtitle": "Ihre ruhige Flucht erwartet Sie"
+  }
+}

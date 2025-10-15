@@ -4,16 +4,10 @@ import Link from 'next/link';
 import React, { useState, useRef, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const navLinks = [
-  { href: '/rooms', label: 'Rooms' },
-  { href: '/activities', label: 'Activities' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-];
+import { useTranslation } from 'next-i18next';
 
 const Navbar = () => {
+  const { t } = useTranslation('common');
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -33,6 +27,14 @@ const Navbar = () => {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [isOpen])
+
+  const navLinks = [
+    { href: '/rooms', label: t('navbar.rooms') },
+    { href: '/activities', label: t('navbar.activities') },
+    { href: '/gallery', label: t('navbar.gallery') },
+    { href: '/about', label: t('navbar.about') },
+    { href: '/contact', label: t('navbar.contact') },
+  ];
 
   return (
     <nav aria-label="Primary" className="backdrop-blur-lg bg-white/60 shadow-xl border-b border-white/30 fixed w-full z-[100] transition-all duration-300">
@@ -67,7 +69,7 @@ const Navbar = () => {
               href="/booking"
               className="ml-2 md:ml-4 px-6 py-2 bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-400 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition-transform duration-200 focus:outline-none focus:ring-4 focus:ring-amber-300"
             >
-              Book Now
+              {t('navbar.bookNow')}
             </Link>
           </div>
 
@@ -163,7 +165,7 @@ const Navbar = () => {
                   className="block w-full px-6 py-4 bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-400 text-white text-center rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                   onClick={closeMenu}
                 >
-                  Book Your Stay
+                  {t('navbar.bookYourStay')}
                 </Link>
               </motion.div>
 
@@ -179,9 +181,9 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.7 }}
               >
-                <h3 className="font-semibold text-gray-800 mb-2">Contact Us</h3>
-                <p className="text-sm text-gray-600 mb-1">+256 390 456 789</p>
-                <p className="text-sm text-gray-600">info@bunyonyiluxuryresort.com</p>
+                <h3 className="font-semibold text-gray-800 mb-2">{t('navbar.contactUs')}</h3>
+                <p className="text-sm text-gray-600 mb-1">{t('navbar.phone')}: +256 390 456 789</p>
+                <p className="text-sm text-gray-600">{t('navbar.email')}: info@bunyonyiluxuryresort.com</p>
               </motion.div>
             </div>
           </motion.div>

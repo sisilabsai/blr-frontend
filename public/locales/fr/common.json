@@ -1,0 +1,27 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "rooms": "Chambres",
+    "activities": "Activités",
+    "gallery": "Galerie",
+    "about": "À propos",
+    "contact": "Contact",
+    "bookNow": "Réserver maintenant",
+    "bookYourStay": "Réservez votre séjour",
+    "contactUs": "Contactez-nous",
+    "phone": "Téléphone",
+    "email": "Email"
+  },
+  "footer": {
+    "title": "Bunyonyi Luxury Resort",
+    "description": "Découvrez la tranquillité du lac Bunyonyi — cottages privés, excursions en canoë et cuisine locale.",
+    "fullDescription": "Bunyonyi Luxury Resort — un refuge intime au bord du lac perché sur les rives brumeuses du lac Bunyonyi. Nous allions confort raffiné avec des expériences centrées sur la nature : cottages privés avec vues panoramiques sur l'eau, excursions culturelles guidées, excursions en canoë entre les îles parsemées d'arbres, et restauration durable de la ferme à la table. Venez pour le silence et repartez avec des histoires.",
+    "poweredBy": "Propulsé et développé par",
+    "copyright": "© 2025 Bunyonyi Luxury Resort. Tous droits réservés.",
+    "developedBy": "Propulsé et développé par"
+  },
+  "hero": {
+    "title": "Bienvenue au Bunyonyi Luxury Resort",
+    "subtitle": "Votre évasion sereine vous attend"
+  }
+}
